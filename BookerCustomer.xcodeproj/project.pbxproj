@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		AC2FFE2824C49755003EF12C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE2724C49755003EF12C /* AppDelegate.swift */; };
 		AC2FFE2A24C49755003EF12C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE2924C49755003EF12C /* SceneDelegate.swift */; };
-		AC2FFE2C24C49755003EF12C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE2B24C49755003EF12C /* ViewController.swift */; };
-		AC2FFE2F24C49755003EF12C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2FFE2D24C49755003EF12C /* Main.storyboard */; };
 		AC2FFE3124C49756003EF12C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC2FFE3024C49756003EF12C /* Assets.xcassets */; };
 		AC2FFE3424C49756003EF12C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2FFE3224C49756003EF12C /* LaunchScreen.storyboard */; };
+		AC2FFE3E24C4988E003EF12C /* DefaultHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE3D24C4988E003EF12C /* DefaultHomeController.swift */; };
+		AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE3F24C498BD003EF12C /* DefaultHomeView.swift */; };
+		AC2FFE4224C4994D003EF12C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE4124C4994D003EF12C /* Protocols.swift */; };
+		AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB4524C7157B00C63A08 /* BCButton.swift */; };
+		AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB4824C7166900C63A08 /* Colors.swift */; };
+		AC7EFB5124C72CB400C63A08 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5024C72CB400C63A08 /* OrderView.swift */; };
+		AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */; };
+		AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5524C73D4900C63A08 /* Fonts.swift */; };
+		AC7EFB5A24C75B0D00C63A08 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC7EFB5924C75B0D00C63A08 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC2FFE2424C49755003EF12C /* Booker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2FFE2724C49755003EF12C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC2FFE2924C49755003EF12C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AC2FFE2B24C49755003EF12C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AC2FFE2E24C49755003EF12C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC2FFE3024C49756003EF12C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC2FFE3324C49756003EF12C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC2FFE3524C49756003EF12C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC2FFE3D24C4988E003EF12C /* DefaultHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeController.swift; sourceTree = "<group>"; };
+		AC2FFE3F24C498BD003EF12C /* DefaultHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeView.swift; sourceTree = "<group>"; };
+		AC2FFE4124C4994D003EF12C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		AC7EFB4524C7157B00C63A08 /* BCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCButton.swift; sourceTree = "<group>"; };
+		AC7EFB4824C7166900C63A08 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		AC7EFB5024C72CB400C63A08 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		AC7EFB5524C73D4900C63A08 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		AC7EFB5924C75B0D00C63A08 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +54,8 @@
 		AC2FFE1B24C49755003EF12C = {
 			isa = PBXGroup;
 			children = (
-				AC2FFE2624C49755003EF12C /* Booker */,
+				AC7EFB5924C75B0D00C63A08 /* .gitignore */,
+				AC2FFE2624C49755003EF12C /* BookerCustomer */,
 				AC2FFE2524C49755003EF12C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,18 +68,64 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC2FFE2624C49755003EF12C /* Booker */ = {
+		AC2FFE2624C49755003EF12C /* BookerCustomer */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EFB5224C72D4000C63A08 /* Extensions */,
+				AC7EFB4324C7155E00C63A08 /* DesignSystem */,
+				AC2FFE3C24C4987C003EF12C /* Home */,
+				AC2FFE3B24C4977C003EF12C /* SupportingFiles */,
+			);
+			path = BookerCustomer;
+			sourceTree = "<group>";
+		};
+		AC2FFE3B24C4977C003EF12C /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				AC2FFE2724C49755003EF12C /* AppDelegate.swift */,
 				AC2FFE2924C49755003EF12C /* SceneDelegate.swift */,
-				AC2FFE2B24C49755003EF12C /* ViewController.swift */,
-				AC2FFE2D24C49755003EF12C /* Main.storyboard */,
 				AC2FFE3024C49756003EF12C /* Assets.xcassets */,
 				AC2FFE3224C49756003EF12C /* LaunchScreen.storyboard */,
 				AC2FFE3524C49756003EF12C /* Info.plist */,
 			);
-			path = Booker;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		AC2FFE3C24C4987C003EF12C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AC2FFE3D24C4988E003EF12C /* DefaultHomeController.swift */,
+				AC2FFE3F24C498BD003EF12C /* DefaultHomeView.swift */,
+				AC2FFE4124C4994D003EF12C /* Protocols.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AC7EFB4324C7155E00C63A08 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EFB4824C7166900C63A08 /* Colors.swift */,
+				AC7EFB5524C73D4900C63A08 /* Fonts.swift */,
+				AC7EFB4424C7156D00C63A08 /* Views */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		AC7EFB4424C7156D00C63A08 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EFB4524C7157B00C63A08 /* BCButton.swift */,
+				AC7EFB5024C72CB400C63A08 /* OrderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AC7EFB5224C72D4000C63A08 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,7 +163,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AC2FFE1F24C49755003EF12C /* Build configuration list for PBXProject "Booker" */;
+			buildConfigurationList = AC2FFE1F24C49755003EF12C /* Build configuration list for PBXProject "BookerCustomer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -126,8 +187,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC2FFE3424C49756003EF12C /* LaunchScreen.storyboard in Resources */,
+				AC7EFB5A24C75B0D00C63A08 /* .gitignore in Resources */,
 				AC2FFE3124C49756003EF12C /* Assets.xcassets in Resources */,
-				AC2FFE2F24C49755003EF12C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +199,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2FFE2C24C49755003EF12C /* ViewController.swift in Sources */,
+				AC2FFE4224C4994D003EF12C /* Protocols.swift in Sources */,
+				AC7EFB5124C72CB400C63A08 /* OrderView.swift in Sources */,
+				AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */,
 				AC2FFE2824C49755003EF12C /* AppDelegate.swift in Sources */,
+				AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */,
+				AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */,
+				AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */,
+				AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */,
 				AC2FFE2A24C49755003EF12C /* SceneDelegate.swift in Sources */,
+				AC2FFE3E24C4988E003EF12C /* DefaultHomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AC2FFE2D24C49755003EF12C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC2FFE2E24C49755003EF12C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AC2FFE3224C49756003EF12C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,7 +346,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
-				INFOPLIST_FILE = Booker/Info.plist;
+				INFOPLIST_FILE = BookerCustomer/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bitsoev.Booker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,7 +365,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89WB9E7UEU;
-				INFOPLIST_FILE = Booker/Info.plist;
+				INFOPLIST_FILE = BookerCustomer/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,14 +374,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bitsoev.Booker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC2FFE1F24C49755003EF12C /* Build configuration list for PBXProject "Booker" */ = {
+		AC2FFE1F24C49755003EF12C /* Build configuration list for PBXProject "BookerCustomer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC2FFE3624C49756003EF12C /* Debug */,

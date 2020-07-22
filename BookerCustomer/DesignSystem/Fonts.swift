@@ -14,4 +14,8 @@ extension UIFont {
         static let primary = UIFont.systemFont(ofSize: 14)
         static let secondary = UIFont.systemFont(ofSize: 16)
     }
+    
+    struct Cell {
+        static let title = UIFont.systemFont(ofSize: 16)
+    }
 }

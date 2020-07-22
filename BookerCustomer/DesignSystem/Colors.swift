@@ -24,4 +24,11 @@ extension UIColor {
         static let pickerView = UIColor.black.withAlphaComponent(0.95)
         static let toolbar = UIColor.black
     }
+    
+    struct Cell {
+        static let background = UIColor.black
+        static let mainView = UIColor.white
+        static let title = UIColor.black
+    }
+    
 }

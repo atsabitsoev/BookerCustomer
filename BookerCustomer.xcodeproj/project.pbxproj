@@ -20,6 +20,7 @@
 		AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */; };
 		AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5524C73D4900C63A08 /* Fonts.swift */; };
 		AC7EFB5A24C75B0D00C63A08 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC7EFB5924C75B0D00C63A08 /* .gitignore */; };
+		AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84D18E24C8950400D2ED75 /* DiscountCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		AC7EFB5524C73D4900C63A08 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		AC7EFB5924C75B0D00C63A08 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AC84D18E24C8950400D2ED75 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +106,10 @@
 		AC7EFB4324C7155E00C63A08 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				AC84D18D24C892CF00D2ED75 /* Cells */,
+				AC7EFB4424C7156D00C63A08 /* Views */,
 				AC7EFB4824C7166900C63A08 /* Colors.swift */,
 				AC7EFB5524C73D4900C63A08 /* Fonts.swift */,
-				AC7EFB4424C7156D00C63A08 /* Views */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -126,6 +129,14 @@
 				AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC84D18D24C892CF00D2ED75 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AC84D18E24C8950400D2ED75 /* DiscountCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 				AC2FFE4224C4994D003EF12C /* Protocols.swift in Sources */,
 				AC7EFB5124C72CB400C63A08 /* OrderView.swift in Sources */,
 				AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */,
+				AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */,
 				AC2FFE2824C49755003EF12C /* AppDelegate.swift in Sources */,
 				AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */,
 				AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */,

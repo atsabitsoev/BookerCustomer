@@ -12,10 +12,7 @@ final class DefaultHomeView: UIView, HomeViewing {
     
     private var controller: UIViewController & HomeControlling
     
-    private let mainView: OrderView = {
-        let view = OrderView(state: .shouldOrder, date: Date(), personsCount: 1)
-        return view
-    }()
+    private let tableView = UITableView()
     
     
     init(controller: UIViewController & HomeControlling) {
@@ -30,16 +27,37 @@ final class DefaultHomeView: UIView, HomeViewing {
     
     func configureView() {
         backgroundColor = UIColor.Background.primary
-        addSubview(mainView)
+        addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = backgroundColor
+        tableView.delegate = self
+        tableView.dataSource = self
         setNeedsUpdateConstraints()
     }
     
     override func updateConstraints() {
         NSLayoutConstraint.activate([
-            mainView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            mainView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24)
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
         super.updateConstraints()
     }
+}
+
+extension DefaultHomeView: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = DiscountcCell()
+        cell.configureCell(title: "Скидончик тут находится")
+        return cell
+    }
+    
 }

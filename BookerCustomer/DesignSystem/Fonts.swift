@@ -16,6 +16,8 @@ extension UIFont {
     }
     
     struct Cell {
+        static let bigTitle = UIFont.systemFont(ofSize: 16, weight: .medium)
         static let title = UIFont.systemFont(ofSize: 16)
+        static let description = UIFont.systemFont(ofSize: 12)
     }
 }

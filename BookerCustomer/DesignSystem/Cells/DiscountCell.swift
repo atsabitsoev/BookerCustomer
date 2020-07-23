@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DiscountcCell: UITableViewCell {
+final class DiscountCell: UITableViewCell {
     
     private let mainView: UIView = {
         let view = UIView()

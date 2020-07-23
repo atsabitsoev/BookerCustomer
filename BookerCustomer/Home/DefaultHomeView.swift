@@ -55,8 +55,8 @@ extension DefaultHomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = DiscountcCell()
-        cell.configureCell(title: "Скидончик тут находится")
+        let cell = PromotionCell()
+        cell.configureCell(imageUrl: "https://img5.goodfon.ru/original/1920x1080/8/9c/abstraktsiia-fon-kartinka-sinii-goluboi-smeshenie-tsvetov-kr.jpg", title: "Привет", description: "Андрей")
         return cell
     }
     

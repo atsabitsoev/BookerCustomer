@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43A2E867B9C0AE8ABE9C6381 /* Pods_Booker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A35B05C9B8E401AC5DCBE42 /* Pods_Booker.framework */; };
 		AC2FFE2824C49755003EF12C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE2724C49755003EF12C /* AppDelegate.swift */; };
 		AC2FFE2A24C49755003EF12C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE2924C49755003EF12C /* SceneDelegate.swift */; };
 		AC2FFE3124C49756003EF12C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC2FFE3024C49756003EF12C /* Assets.xcassets */; };
@@ -20,10 +21,13 @@
 		AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */; };
 		AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5524C73D4900C63A08 /* Fonts.swift */; };
 		AC7EFB5A24C75B0D00C63A08 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC7EFB5924C75B0D00C63A08 /* .gitignore */; };
+		AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */; };
 		AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84D18E24C8950400D2ED75 /* DiscountCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3989A40E7591934DC1D998A1 /* Pods-Booker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booker.debug.xcconfig"; path = "Target Support Files/Pods-Booker/Pods-Booker.debug.xcconfig"; sourceTree = "<group>"; };
+		9A35B05C9B8E401AC5DCBE42 /* Pods_Booker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Booker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2FFE2424C49755003EF12C /* Booker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2FFE2724C49755003EF12C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC2FFE2924C49755003EF12C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +43,9 @@
 		AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		AC7EFB5524C73D4900C63A08 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		AC7EFB5924C75B0D00C63A08 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		AC84D18E24C8950400D2ED75 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		CE1BB9B19030D0374652F938 /* Pods-Booker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booker.release.xcconfig"; path = "Target Support Files/Pods-Booker/Pods-Booker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,18 +53,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A2E867B9C0AE8ABE9C6381 /* Pods_Booker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BD76B7E9ADD09736D29183D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A35B05C9B8E401AC5DCBE42 /* Pods_Booker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F58C4A732C62603A2617CA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3989A40E7591934DC1D998A1 /* Pods-Booker.debug.xcconfig */,
+				CE1BB9B19030D0374652F938 /* Pods-Booker.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AC2FFE1B24C49755003EF12C = {
 			isa = PBXGroup;
 			children = (
 				AC7EFB5924C75B0D00C63A08 /* .gitignore */,
 				AC2FFE2624C49755003EF12C /* BookerCustomer */,
 				AC2FFE2524C49755003EF12C /* Products */,
+				8F58C4A732C62603A2617CA8 /* Pods */,
+				2BD76B7E9ADD09736D29183D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				AC84D18E24C8950400D2ED75 /* DiscountCell.swift */,
+				AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -146,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC2FFE3824C49756003EF12C /* Build configuration list for PBXNativeTarget "Booker" */;
 			buildPhases = (
+				8A4C73BEC2C1978015A8A06C /* [CP] Check Pods Manifest.lock */,
 				AC2FFE2024C49755003EF12C /* Sources */,
 				AC2FFE2124C49755003EF12C /* Frameworks */,
 				AC2FFE2224C49755003EF12C /* Resources */,
+				37E62863C33E70BDB9487640 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,6 +235,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37E62863C33E70BDB9487640 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Booker/Pods-Booker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Booker/Pods-Booker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Booker/Pods-Booker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A4C73BEC2C1978015A8A06C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Booker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AC2FFE2024C49755003EF12C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -219,6 +291,7 @@
 				AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */,
 				AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */,
 				AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */,
+				AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */,
 				AC2FFE2A24C49755003EF12C /* SceneDelegate.swift in Sources */,
 				AC2FFE3E24C4988E003EF12C /* DefaultHomeController.swift in Sources */,
 			);
@@ -354,6 +427,7 @@
 		};
 		AC2FFE3924C49756003EF12C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3989A40E7591934DC1D998A1 /* Pods-Booker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -373,6 +447,7 @@
 		};
 		AC2FFE3A24C49756003EF12C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE1BB9B19030D0374652F938 /* Pods-Booker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

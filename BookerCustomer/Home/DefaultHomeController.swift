@@ -18,4 +18,9 @@ final class DefaultHomeController: UIViewController, HomeControlling {
         homeView.configureView()
         self.view = homeView
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.present(homeView.getAlertController(), animated: true, completion: nil)
+    }
 }

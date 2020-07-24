@@ -20,4 +20,9 @@ extension UIFont {
         static let title = UIFont.systemFont(ofSize: 16)
         static let description = UIFont.systemFont(ofSize: 12)
     }
+    
+    struct Alert {
+        static let title = UIFont.systemFont(ofSize: 16, weight: .bold)
+        static let message = UIFont.systemFont(ofSize: 14)
+    }
 }

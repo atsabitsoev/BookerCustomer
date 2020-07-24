@@ -6,4 +6,15 @@
 //  Copyright © 2020 Ацамаз Бицоев. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class BCNavigationController: UINavigationController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationBar.isTranslucent = false
+        navigationBar.barTintColor = UIColor.Background.primary
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Background.title]
+        navigationBar.tintColor = UIColor.Button.tapOnMe
+    }
+}

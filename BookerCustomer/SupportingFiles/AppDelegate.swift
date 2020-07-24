@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: .zero)
-        window?.rootViewController = DefaultHomeController()
+        window?.rootViewController = BCTabBarController()
         window?.makeKeyAndVisible()
         return true
     }

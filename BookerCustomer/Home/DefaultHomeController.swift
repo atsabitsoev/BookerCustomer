@@ -14,6 +14,7 @@ final class DefaultHomeController: UIViewController, HomeControlling {
     
     override func loadView() {
         super.loadView()
+        title = "Бронирование"
         homeView = DefaultHomeView(controller: self)
         homeView.configureView()
         self.view = homeView

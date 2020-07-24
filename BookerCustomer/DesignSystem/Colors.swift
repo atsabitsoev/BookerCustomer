@@ -32,4 +32,11 @@ extension UIColor {
         static let description = UIColor(named: "cellDescription")
     }
     
+    struct Alert {
+        static let mainView = UIColor.white
+        static let background = UIColor.black.withAlphaComponent(0.5)
+        static let title = UIColor.black
+        static let message = UIColor.black
+    }
+    
 }

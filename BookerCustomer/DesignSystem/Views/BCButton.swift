@@ -26,8 +26,8 @@ final class BCButton: UIButton {
     init(
         buttonState: State,
         tapMeTitle: String,
-        waitingTitle: String,
-        readyTitle: String
+        waitingTitle: String = "",
+        readyTitle: String = ""
         ) {
         self.buttonState = buttonState
         self.tapMeTitle = tapMeTitle

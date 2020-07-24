@@ -23,6 +23,7 @@
 		AC7EFB5A24C75B0D00C63A08 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC7EFB5924C75B0D00C63A08 /* .gitignore */; };
 		AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */; };
 		AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84D18E24C8950400D2ED75 /* DiscountCell.swift */; };
+		ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8819424CB2B040013A01D /* SimpleAlertController.swift */; };
 		ACEDCA0524CB158F00790186 /* BCTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		AC7EFB5924C75B0D00C63A08 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		AC84D18E24C8950400D2ED75 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		ACC8819424CB2B040013A01D /* SimpleAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertController.swift; sourceTree = "<group>"; };
 		ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCTextFieldCell.swift; sourceTree = "<group>"; };
 		CE1BB9B19030D0374652F938 /* Pods-Booker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booker.release.xcconfig"; path = "Target Support Files/Pods-Booker/Pods-Booker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 		AC7EFB4324C7155E00C63A08 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				ACC8819324CB2A9E0013A01D /* Alerts */,
 				AC84D18D24C892CF00D2ED75 /* Cells */,
 				AC7EFB4424C7156D00C63A08 /* Views */,
 				AC7EFB4824C7166900C63A08 /* Colors.swift */,
@@ -167,6 +170,14 @@
 				ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		ACC8819324CB2A9E0013A01D /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				ACC8819424CB2B040013A01D /* SimpleAlertController.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				AC7EFB5124C72CB400C63A08 /* OrderView.swift in Sources */,
 				AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */,
 				AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */,
+				ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */,
 				AC2FFE2824C49755003EF12C /* AppDelegate.swift in Sources */,
 				AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */,
 				AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */,

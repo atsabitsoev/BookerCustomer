@@ -6,11 +6,12 @@
 //  Copyright © 2020 Ацамаз Бицоев. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 protocol HomeViewing {
     func configureView()
+    func getAlertController() -> UIViewController
 }
 
 protocol HomeControlling {

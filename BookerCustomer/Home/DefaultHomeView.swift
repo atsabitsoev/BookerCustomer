@@ -30,7 +30,8 @@ final class DefaultHomeView: UIView, HomeViewing {
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
         tableView.backgroundColor = backgroundColor
         tableView.delegate = self
         tableView.dataSource = self
@@ -55,8 +56,8 @@ extension DefaultHomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = PromotionCell()
-        cell.configureCell(imageUrl: "https://img5.goodfon.ru/original/1920x1080/8/9c/abstraktsiia-fon-kartinka-sinii-goluboi-smeshenie-tsvetov-kr.jpg", title: "Привет", description: "Андрей")
+        let cell = BCTextFieldCell(isFirstCell: indexPath.row == 0, isLastCell: indexPath.row == 1, placeholder: "Имя")
+        cell.configureCell(with: "Геннадий")
         return cell
     }
     

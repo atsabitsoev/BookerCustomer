@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		AC7EFB5A24C75B0D00C63A08 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC7EFB5924C75B0D00C63A08 /* .gitignore */; };
 		AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */; };
 		AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84D18E24C8950400D2ED75 /* DiscountCell.swift */; };
+		ACEDCA0524CB158F00790186 /* BCTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		AC7EFB5924C75B0D00C63A08 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		AC84D18E24C8950400D2ED75 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCTextFieldCell.swift; sourceTree = "<group>"; };
 		CE1BB9B19030D0374652F938 /* Pods-Booker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booker.release.xcconfig"; path = "Target Support Files/Pods-Booker/Pods-Booker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +76,6 @@
 				3989A40E7591934DC1D998A1 /* Pods-Booker.debug.xcconfig */,
 				CE1BB9B19030D0374652F938 /* Pods-Booker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -163,6 +164,7 @@
 			children = (
 				AC84D18E24C8950400D2ED75 /* DiscountCell.swift */,
 				AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */,
+				ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -293,6 +295,7 @@
 				AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */,
 				AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */,
 				AC2FFE2A24C49755003EF12C /* SceneDelegate.swift in Sources */,
+				ACEDCA0524CB158F00790186 /* BCTextFieldCell.swift in Sources */,
 				AC2FFE3E24C4988E003EF12C /* DefaultHomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

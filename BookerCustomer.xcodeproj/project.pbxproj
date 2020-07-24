@@ -26,6 +26,8 @@
 		AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84D18E24C8950400D2ED75 /* DiscountCell.swift */; };
 		ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8819424CB2B040013A01D /* SimpleAlertController.swift */; };
 		ACEDCA0524CB158F00790186 /* BCTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */; };
+		ACF5324A24CB9D3C00E832AC /* BCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5324924CB9D3C00E832AC /* BCNavigationController.swift */; };
+		ACF5324C24CB9F9000E832AC /* BCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5324B24CB9F9000E832AC /* BCTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		AC84D18E24C8950400D2ED75 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
 		ACC8819424CB2B040013A01D /* SimpleAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertController.swift; sourceTree = "<group>"; };
 		ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCTextFieldCell.swift; sourceTree = "<group>"; };
+		ACF5324924CB9D3C00E832AC /* BCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCNavigationController.swift; sourceTree = "<group>"; };
+		ACF5324B24CB9F9000E832AC /* BCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCTabBarController.swift; sourceTree = "<group>"; };
 		CE1BB9B19030D0374652F938 /* Pods-Booker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booker.release.xcconfig"; path = "Target Support Files/Pods-Booker/Pods-Booker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +142,7 @@
 		AC7EFB4324C7155E00C63A08 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				ACF5324824CB9D2E00E832AC /* Navigation */,
 				ACC8819324CB2A9E0013A01D /* Alerts */,
 				AC84D18D24C892CF00D2ED75 /* Cells */,
 				AC7EFB4424C7156D00C63A08 /* Views */,
@@ -181,6 +186,15 @@
 				ACC8819424CB2B040013A01D /* SimpleAlertController.swift */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		ACF5324824CB9D2E00E832AC /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				ACF5324924CB9D3C00E832AC /* BCNavigationController.swift */,
+				ACF5324B24CB9F9000E832AC /* BCTabBarController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,10 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF5324A24CB9D3C00E832AC /* BCNavigationController.swift in Sources */,
 				AC2FFE4224C4994D003EF12C /* Protocols.swift in Sources */,
 				AC7EFB5124C72CB400C63A08 /* OrderView.swift in Sources */,
 				AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */,
 				AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */,
+				ACF5324C24CB9F9000E832AC /* BCTabBarController.swift in Sources */,
 				AC7B33E524CB924B00CD19B9 /* BCSwitchCell.swift in Sources */,
 				ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */,
 				AC2FFE2824C49755003EF12C /* AppDelegate.swift in Sources */,

@@ -23,6 +23,7 @@ extension UIColor {
         static let secondary = UIColor(named: "backgroundSecondary")
         static let pickerView = UIColor.black.withAlphaComponent(0.95)
         static let toolbar = UIColor.black
+        static let title = UIColor.white
     }
     
     struct Cell {

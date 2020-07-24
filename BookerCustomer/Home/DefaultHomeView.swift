@@ -23,14 +23,7 @@ final class DefaultHomeView: UIView, HomeViewing {
     
     func configureView() {
         backgroundColor = UIColor.Background.primary
+        setNeedsUpdateConstraints()
     }
-    
-    func getAlertController() -> UIViewController {
-        let alert = SimpleAlertController(title: "Привет", message: "flsdkd fjlskjf ldksfj dlsk fjdslkf jsdlk fjlsdk fjl") {
-            print("tap")
-        }
-        return alert
-    }
-    
     
 }

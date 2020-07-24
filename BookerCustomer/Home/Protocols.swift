@@ -11,7 +11,6 @@ import UIKit
 
 protocol HomeViewing {
     func configureView()
-    func getAlertController() -> UIViewController
 }
 
 protocol HomeControlling {

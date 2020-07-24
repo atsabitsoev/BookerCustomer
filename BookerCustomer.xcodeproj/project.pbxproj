@@ -15,6 +15,7 @@
 		AC2FFE3E24C4988E003EF12C /* DefaultHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE3D24C4988E003EF12C /* DefaultHomeController.swift */; };
 		AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE3F24C498BD003EF12C /* DefaultHomeView.swift */; };
 		AC2FFE4224C4994D003EF12C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE4124C4994D003EF12C /* Protocols.swift */; };
+		AC7B33E524CB924B00CD19B9 /* BCSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B33E424CB924B00CD19B9 /* BCSwitchCell.swift */; };
 		AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB4524C7157B00C63A08 /* BCButton.swift */; };
 		AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB4824C7166900C63A08 /* Colors.swift */; };
 		AC7EFB5124C72CB400C63A08 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5024C72CB400C63A08 /* OrderView.swift */; };
@@ -39,6 +40,7 @@
 		AC2FFE3D24C4988E003EF12C /* DefaultHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeController.swift; sourceTree = "<group>"; };
 		AC2FFE3F24C498BD003EF12C /* DefaultHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeView.swift; sourceTree = "<group>"; };
 		AC2FFE4124C4994D003EF12C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		AC7B33E424CB924B00CD19B9 /* BCSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCSwitchCell.swift; sourceTree = "<group>"; };
 		AC7EFB4524C7157B00C63A08 /* BCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCButton.swift; sourceTree = "<group>"; };
 		AC7EFB4824C7166900C63A08 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		AC7EFB5024C72CB400C63A08 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				AC84D18E24C8950400D2ED75 /* DiscountCell.swift */,
 				AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */,
 				ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */,
+				AC7B33E424CB924B00CD19B9 /* BCSwitchCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				AC7EFB5124C72CB400C63A08 /* OrderView.swift in Sources */,
 				AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */,
 				AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */,
+				AC7B33E524CB924B00CD19B9 /* BCSwitchCell.swift in Sources */,
 				ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */,
 				AC2FFE2824C49755003EF12C /* AppDelegate.swift in Sources */,
 				AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */,

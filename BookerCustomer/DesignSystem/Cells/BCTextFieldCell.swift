@@ -70,6 +70,7 @@ final class BCTextFieldCell: UITableViewCell {
     }
     
     private func configureView() {
+        selectionStyle = .none
         contentView.backgroundColor = UIColor.Background.primary
         textField.placeholder = placeholder
         contentView.addSubview(noCornersViewTop)

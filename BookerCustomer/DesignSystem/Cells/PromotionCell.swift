@@ -84,6 +84,7 @@ final class PromotionCell: UITableViewCell {
     }
     
     private func configureView() {
+        selectionStyle = .none
         contentView.backgroundColor = UIColor.Cell.background
         contentView.addSubview(mainView)
         mainView.addSubview(mainVerticalStack)

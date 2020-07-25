@@ -13,11 +13,13 @@ final class BCTabBarController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
         tabBar.isTranslucent = false
-        tabBar.barTintColor = UIColor.Background.primary
+        tabBar.barTintColor = UIColor.Background.secondary
         tabBar.tintColor = UIColor.Button.tapOnMe
         let homeVC = BCNavigationController(rootViewController: DefaultHomeController())
         homeVC.tabBarItem = UITabBarItem(title: "Бронь", image: UIImage(named: "orderTabBarItem"), tag: 0)
-        viewControllers = [homeVC]
+        let promotionsVC = BCNavigationController(rootViewController: DefaultPromotionsController())
+        promotionsVC.tabBarItem = UITabBarItem(title: "Акции", image: UIImage(named: "promotionsTabBarItem"), tag: 1)
+        viewControllers = [homeVC, promotionsVC]
     }
     
     required init?(coder: NSCoder) {

@@ -30,7 +30,6 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }()
     private let personsCountPicker: UIPickerView = {
         let picker = UIPickerView()
-        picker.setValue(UIColor.Button.title, forKey: "textColor")
         return picker
     }()
     private let dateButton: UIButton = {
@@ -237,9 +236,10 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         return 30
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let str = personsString(from: row + 1)
-        return str
+        let attributedString = NSAttributedString(string: str, attributes: [NSAttributedString.Key.foregroundColor: UIColor.Button.title])
+        return attributedString
     }
     
 }

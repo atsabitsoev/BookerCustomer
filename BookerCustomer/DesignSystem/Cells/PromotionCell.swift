@@ -11,6 +11,8 @@ import SDWebImage
 
 final class PromotionCell: UITableViewCell {
     
+    static let identifier = "PromotionCell"
+    
     private let horizontalInset: CGFloat = 26
     private let verticalInset: CGFloat = 10
     

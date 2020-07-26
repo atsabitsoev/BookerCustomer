@@ -10,7 +10,7 @@ import UIKit
 
 final class DefaultPromotionsView: UIView, PromotionsViewing {
     
-    private var controller: UIViewController & PromotionsControlling
+    private var controller: PromotionsControlling
     
     fileprivate var promotionItems: [PromotionItem] = [
         PromotionItem(
@@ -56,7 +56,7 @@ final class DefaultPromotionsView: UIView, PromotionsViewing {
         return table
     }()
     
-    init(controller: UIViewController & PromotionsControlling) {
+    init(controller: PromotionsControlling) {
         self.controller = controller
         super.init(frame: .zero)
     }

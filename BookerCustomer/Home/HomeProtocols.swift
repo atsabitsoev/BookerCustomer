@@ -9,9 +9,9 @@
 import UIKit
 
 
-protocol HomeViewing {
+protocol HomeViewing: UIView {
     func configureView()
 }
 
-protocol HomeControlling {
+protocol HomeControlling: UIViewController {
 }

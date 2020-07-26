@@ -19,7 +19,9 @@ final class BCTabBarController: UITabBarController {
         homeVC.tabBarItem = UITabBarItem(title: "Бронь", image: UIImage(named: "orderTabBarItem"), tag: 0)
         let promotionsVC = BCNavigationController(rootViewController: DefaultPromotionsController())
         promotionsVC.tabBarItem = UITabBarItem(title: "Акции", image: UIImage(named: "promotionsTabBarItem"), tag: 1)
-        viewControllers = [homeVC, promotionsVC]
+        let discountsVC = BCNavigationController(rootViewController: DefaultDiscountsController())
+        discountsVC.tabBarItem = UITabBarItem(title: "Мои скидки", image: UIImage(named: "discountsTabBarItem"), tag: 2)
+        viewControllers = [homeVC, promotionsVC, discountsVC]
     }
     
     required init?(coder: NSCoder) {

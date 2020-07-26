@@ -10,7 +10,7 @@ import UIKit
 
 final class DefaultHomeController: UIViewController, HomeControlling {
     
-    private var homeView: (UIView & HomeViewing)!
+    private var homeView: HomeViewing!
     
     override func loadView() {
         super.loadView()

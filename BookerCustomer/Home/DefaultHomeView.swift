@@ -10,11 +10,11 @@ import UIKit
 
 final class DefaultHomeView: UIView, HomeViewing {
     
-    private var controller: UIViewController & HomeControlling
+    private var controller: HomeControlling
     
     private let orderView = OrderView(state: .shouldOrder, date: Date(), personsCount: 1)
     
-    init(controller: UIViewController & HomeControlling) {
+    init(controller: HomeControlling) {
         self.controller = controller
         super.init(frame: .zero)
         addSubview(orderView)

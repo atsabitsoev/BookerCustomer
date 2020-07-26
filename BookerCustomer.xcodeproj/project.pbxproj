@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		43A2E867B9C0AE8ABE9C6381 /* Pods_Booker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A35B05C9B8E401AC5DCBE42 /* Pods_Booker.framework */; };
+		AC0D0AF224CD2A7D00D75F29 /* DefaultDiscountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D0AF124CD2A7D00D75F29 /* DefaultDiscountsController.swift */; };
+		AC0D0AF424CD2AA800D75F29 /* DefaultDiscountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D0AF324CD2AA800D75F29 /* DefaultDiscountsView.swift */; };
+		AC0D0AF624CD2AD100D75F29 /* DiscountsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D0AF524CD2AD100D75F29 /* DiscountsProtocols.swift */; };
+		AC0D0AF824CD2E4900D75F29 /* DiscountItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D0AF724CD2E4900D75F29 /* DiscountItem.swift */; };
 		AC26A3E324CC6CED00B37536 /* DefaultPromotionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26A3E224CC6CED00B37536 /* DefaultPromotionsController.swift */; };
 		AC26A3E524CC6CF900B37536 /* DefaultPromotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26A3E424CC6CF900B37536 /* DefaultPromotionsView.swift */; };
 		AC26A3E724CC6CFF00B37536 /* PromotionsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26A3E624CC6CFF00B37536 /* PromotionsProtocols.swift */; };
@@ -37,6 +41,10 @@
 /* Begin PBXFileReference section */
 		3989A40E7591934DC1D998A1 /* Pods-Booker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booker.debug.xcconfig"; path = "Target Support Files/Pods-Booker/Pods-Booker.debug.xcconfig"; sourceTree = "<group>"; };
 		9A35B05C9B8E401AC5DCBE42 /* Pods_Booker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Booker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC0D0AF124CD2A7D00D75F29 /* DefaultDiscountsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiscountsController.swift; sourceTree = "<group>"; };
+		AC0D0AF324CD2AA800D75F29 /* DefaultDiscountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiscountsView.swift; sourceTree = "<group>"; };
+		AC0D0AF524CD2AD100D75F29 /* DiscountsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountsProtocols.swift; sourceTree = "<group>"; };
+		AC0D0AF724CD2E4900D75F29 /* DiscountItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountItem.swift; sourceTree = "<group>"; };
 		AC26A3E224CC6CED00B37536 /* DefaultPromotionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPromotionsController.swift; sourceTree = "<group>"; };
 		AC26A3E424CC6CF900B37536 /* DefaultPromotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPromotionsView.swift; sourceTree = "<group>"; };
 		AC26A3E624CC6CFF00B37536 /* PromotionsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsProtocols.swift; sourceTree = "<group>"; };
@@ -95,11 +103,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AC0D0AF024CD2A6200D75F29 /* Discounts */ = {
+			isa = PBXGroup;
+			children = (
+				AC0D0AF124CD2A7D00D75F29 /* DefaultDiscountsController.swift */,
+				AC0D0AF324CD2AA800D75F29 /* DefaultDiscountsView.swift */,
+				AC0D0AF724CD2E4900D75F29 /* DiscountItem.swift */,
+				AC0D0AF524CD2AD100D75F29 /* DiscountsProtocols.swift */,
+			);
+			path = Discounts;
+			sourceTree = "<group>";
+		};
 		AC26A3E124CC6CD400B37536 /* Promotions */ = {
 			isa = PBXGroup;
 			children = (
 				AC26A3E224CC6CED00B37536 /* DefaultPromotionsController.swift */,
 				AC26A3E424CC6CF900B37536 /* DefaultPromotionsView.swift */,
+				AC26A3E824CC701300B37536 /* PromotionItem.swift */,
 				AC26A3E624CC6CFF00B37536 /* PromotionsProtocols.swift */,
 			);
 			path = Promotions;
@@ -131,6 +151,7 @@
 				AC7EFB4324C7155E00C63A08 /* DesignSystem */,
 				AC2FFE3C24C4987C003EF12C /* Home */,
 				AC26A3E124CC6CD400B37536 /* Promotions */,
+				AC0D0AF024CD2A6200D75F29 /* Discounts */,
 				AC2FFE3B24C4977C003EF12C /* SupportingFiles */,
 			);
 			path = BookerCustomer;
@@ -153,7 +174,6 @@
 			children = (
 				AC2FFE3D24C4988E003EF12C /* DefaultHomeController.swift */,
 				AC2FFE3F24C498BD003EF12C /* DefaultHomeView.swift */,
-				AC26A3E824CC701300B37536 /* PromotionItem.swift */,
 				AC2FFE4124C4994D003EF12C /* HomeProtocols.swift */,
 			);
 			path = Home;
@@ -336,7 +356,9 @@
 				AC26A3E324CC6CED00B37536 /* DefaultPromotionsController.swift in Sources */,
 				AC2FFE4224C4994D003EF12C /* HomeProtocols.swift in Sources */,
 				AC7EFB5124C72CB400C63A08 /* OrderView.swift in Sources */,
+				AC0D0AF624CD2AD100D75F29 /* DiscountsProtocols.swift in Sources */,
 				AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */,
+				AC0D0AF824CD2E4900D75F29 /* DiscountItem.swift in Sources */,
 				AC26A3E524CC6CF900B37536 /* DefaultPromotionsView.swift in Sources */,
 				AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */,
 				ACF5324C24CB9F9000E832AC /* BCTabBarController.swift in Sources */,
@@ -352,7 +374,9 @@
 				AC2FFE2A24C49755003EF12C /* SceneDelegate.swift in Sources */,
 				ACEDCA0524CB158F00790186 /* BCTextFieldCell.swift in Sources */,
 				AC26A3E924CC701300B37536 /* PromotionItem.swift in Sources */,
+				AC0D0AF224CD2A7D00D75F29 /* DefaultDiscountsController.swift in Sources */,
 				AC2FFE3E24C4988E003EF12C /* DefaultHomeController.swift in Sources */,
+				AC0D0AF424CD2AA800D75F29 /* DefaultDiscountsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

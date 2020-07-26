@@ -10,8 +10,8 @@ import UIKit
 
 final class DefaultPromotionsController: UIViewController, PromotionsControlling {
     
-    private var promotionsView: (UIView & PromotionsViewing)!
-    
+    private var promotionsView: PromotionsViewing!
+
     
     override func loadView() {
         super.loadView()

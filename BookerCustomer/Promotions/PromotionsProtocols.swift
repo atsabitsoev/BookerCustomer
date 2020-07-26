@@ -6,12 +6,12 @@
 //  Copyright © 2020 Ацамаз Бицоев. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
-protocol PromotionsViewing {
+protocol PromotionsViewing: UIView {
     func configureView()
 }
 
-protocol PromotionsControlling {
+protocol PromotionsControlling: UIViewController {
 }

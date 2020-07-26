@@ -10,6 +10,8 @@ import UIKit
 
 final class DiscountCell: UITableViewCell {
     
+    static let identifier = "DiscountCell"
+    
     private let mainView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.Cell.mainView

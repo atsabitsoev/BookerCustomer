@@ -71,8 +71,14 @@ final class BCButton: UIButton {
     override var isHighlighted: Bool {
         didSet {
             UIView.animate(withDuration: 0.1) {
-                self.alpha = self.isHighlighted ? 0.5 : 1
+                self.alpha = (self.isHighlighted || !self.isEnabled) ? 0.5 : 1
             }
+        }
+    }
+    
+    override var isEnabled: Bool {
+        didSet {
+            alpha = isEnabled ? 1 : 0.5
         }
     }
     

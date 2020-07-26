@@ -23,6 +23,9 @@
 		AC2FFE3E24C4988E003EF12C /* DefaultHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE3D24C4988E003EF12C /* DefaultHomeController.swift */; };
 		AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE3F24C498BD003EF12C /* DefaultHomeView.swift */; };
 		AC2FFE4224C4994D003EF12C /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE4124C4994D003EF12C /* HomeProtocols.swift */; };
+		AC45994B24CD32A9005871BF /* DefaultSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45994A24CD32A9005871BF /* DefaultSettingsController.swift */; };
+		AC45994D24CD3301005871BF /* DefaultSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45994C24CD3301005871BF /* DefaultSettingsView.swift */; };
+		AC45994F24CD335E005871BF /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45994E24CD335E005871BF /* SettingsProtocols.swift */; };
 		AC7B33E524CB924B00CD19B9 /* BCSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B33E424CB924B00CD19B9 /* BCSwitchCell.swift */; };
 		AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB4524C7157B00C63A08 /* BCButton.swift */; };
 		AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB4824C7166900C63A08 /* Colors.swift */; };
@@ -58,6 +61,9 @@
 		AC2FFE3D24C4988E003EF12C /* DefaultHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeController.swift; sourceTree = "<group>"; };
 		AC2FFE3F24C498BD003EF12C /* DefaultHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeView.swift; sourceTree = "<group>"; };
 		AC2FFE4124C4994D003EF12C /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		AC45994A24CD32A9005871BF /* DefaultSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingsController.swift; sourceTree = "<group>"; };
+		AC45994C24CD3301005871BF /* DefaultSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingsView.swift; sourceTree = "<group>"; };
+		AC45994E24CD335E005871BF /* SettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
 		AC7B33E424CB924B00CD19B9 /* BCSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCSwitchCell.swift; sourceTree = "<group>"; };
 		AC7EFB4524C7157B00C63A08 /* BCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCButton.swift; sourceTree = "<group>"; };
 		AC7EFB4824C7166900C63A08 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -149,9 +155,7 @@
 			children = (
 				AC7EFB5224C72D4000C63A08 /* Extensions */,
 				AC7EFB4324C7155E00C63A08 /* DesignSystem */,
-				AC2FFE3C24C4987C003EF12C /* Home */,
-				AC26A3E124CC6CD400B37536 /* Promotions */,
-				AC0D0AF024CD2A6200D75F29 /* Discounts */,
+				AC45994624CD326F005871BF /* Modules */,
 				AC2FFE3B24C4977C003EF12C /* SupportingFiles */,
 			);
 			path = BookerCustomer;
@@ -177,6 +181,27 @@
 				AC2FFE4124C4994D003EF12C /* HomeProtocols.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		AC45994624CD326F005871BF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AC2FFE3C24C4987C003EF12C /* Home */,
+				AC26A3E124CC6CD400B37536 /* Promotions */,
+				AC0D0AF024CD2A6200D75F29 /* Discounts */,
+				AC45994724CD328B005871BF /* Settings */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AC45994724CD328B005871BF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AC45994A24CD32A9005871BF /* DefaultSettingsController.swift */,
+				AC45994C24CD3301005871BF /* DefaultSettingsView.swift */,
+				AC45994E24CD335E005871BF /* SettingsProtocols.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		AC7EFB4324C7155E00C63A08 /* DesignSystem */ = {
@@ -352,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC45994B24CD32A9005871BF /* DefaultSettingsController.swift in Sources */,
 				ACF5324A24CB9D3C00E832AC /* BCNavigationController.swift in Sources */,
 				AC26A3E324CC6CED00B37536 /* DefaultPromotionsController.swift in Sources */,
 				AC2FFE4224C4994D003EF12C /* HomeProtocols.swift in Sources */,
@@ -361,11 +387,13 @@
 				AC0D0AF824CD2E4900D75F29 /* DiscountItem.swift in Sources */,
 				AC26A3E524CC6CF900B37536 /* DefaultPromotionsView.swift in Sources */,
 				AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */,
+				AC45994D24CD3301005871BF /* DefaultSettingsView.swift in Sources */,
 				ACF5324C24CB9F9000E832AC /* BCTabBarController.swift in Sources */,
 				AC7B33E524CB924B00CD19B9 /* BCSwitchCell.swift in Sources */,
 				ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */,
 				AC2FFE2824C49755003EF12C /* AppDelegate.swift in Sources */,
 				AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */,
+				AC45994F24CD335E005871BF /* SettingsProtocols.swift in Sources */,
 				AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */,
 				AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */,
 				AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */,

@@ -13,6 +13,16 @@ final class BCTextFieldCell: UITableViewCell {
     private var isFirstCell = false
     private var isLastCell = false
     private var placeholder: String?
+    var delegate: UITextFieldDelegate? {
+        didSet {
+            textField.delegate = delegate
+        }
+    }
+    var textFieldTag: Int? {
+        didSet {
+            textField.tag = textFieldTag ?? 0
+        }
+    }
 
     private let cornerRadius: CGFloat = 16
     

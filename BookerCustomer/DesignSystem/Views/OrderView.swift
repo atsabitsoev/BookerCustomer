@@ -36,14 +36,14 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         let button = UIButton(type: .system)
         button.setTitleColor(UIColor.Button.title, for: .normal)
         button.contentHorizontalAlignment = .left
-        button.titleLabel?.font = UIFont.Button.secondary
+        button.titleLabel?.font = UIFont.Button.options
         return button
     }()
     private let personsCountButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(UIColor.Button.title, for: .normal)
         button.contentHorizontalAlignment = .right
-        button.titleLabel?.font = UIFont.Button.secondary
+        button.titleLabel?.font = UIFont.Button.options
         return button
     }()
     private let orderButton: BCButton = {

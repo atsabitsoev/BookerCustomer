@@ -12,7 +12,8 @@ extension UIFont {
     
     struct Button {
         static let primary = UIFont.systemFont(ofSize: 14)
-        static let secondary = UIFont.systemFont(ofSize: 16)
+        static let options = UIFont.systemFont(ofSize: 16)
+        static let secondary = UIFont.systemFont(ofSize: 14)
     }
     
     struct Cell {

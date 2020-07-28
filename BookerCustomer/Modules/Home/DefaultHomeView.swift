@@ -37,7 +37,6 @@ final class DefaultHomeView: UIView, HomeViewing {
     private func setupOrderViewConstraints() {
         NSLayoutConstraint.activate([
             orderView.topAnchor.constraint(equalTo: topAnchor, constant: 36),
-            orderView.heightAnchor.constraint(equalToConstant: 148),
             orderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             orderView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
         ])

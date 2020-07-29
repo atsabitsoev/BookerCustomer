@@ -16,6 +16,11 @@ class TitlableTextField: UIView {
             mainTextField.delegate = delegate
         }
     }
+    var text: String? {
+        get {
+            return mainTextField.text
+        }
+    }
     
     private var title: String
     private var placeholder: String
@@ -59,10 +64,21 @@ class TitlableTextField: UIView {
         return stack
     }()
     
-    init(title: String, placeholder: String = "") {
+    init(
+        title: String,
+        placeholder: String = "",
+        textType: UITextContentType? = nil,
+        keyboardType: UIKeyboardType? = nil
+        ) {
         self.title = title
         self.placeholder = placeholder
         super.init(frame: .zero)
+        if let textType = textType {
+            mainTextField.textContentType = textType
+        }
+        if let keyboardType = keyboardType {
+            mainTextField.keyboardType = keyboardType
+        }
         configureView()
     }
     
@@ -86,6 +102,12 @@ class TitlableTextField: UIView {
             titleInsetView.widthAnchor.constraint(equalToConstant: 16)
         ])
         super.updateConstraints()
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        super.becomeFirstResponder()
+        mainTextField.becomeFirstResponder()
+        return true
     }
     
     func getBaseTextField() -> UITextField {

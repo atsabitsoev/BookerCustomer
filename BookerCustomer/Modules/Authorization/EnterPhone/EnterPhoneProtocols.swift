@@ -14,4 +14,5 @@ protocol EnterPhoneView: UIView {
 }
 
 protocol EnterPhoneController: UIViewController {
+    func sendCodeButtonTapped(phoneNumber: String?)
 }

@@ -15,14 +15,21 @@ final class DefaultEnterPhoneView: UIView, EnterPhoneView {
     private let phoneTextField: PhoneTitlableTextField = {
         let textField = PhoneTitlableTextField(
             title: "Номер телефона",
-            placeholder: "+7 (000) 000-00-00"
+            placeholder: "+7 (000) 000-00-00",
+            keyboardType: .numberPad
         )
         return textField
     }()
     private let smsCodeTextField: TitlableTextField = {
+        var textType: UITextContentType?
+        if #available(iOS 12.0, *) {
+            textType = .oneTimeCode
+        }
         let textField = TitlableTextField(
             title: "Код из СМС",
-            placeholder: "******"
+            placeholder: "******",
+            textType: textType,
+            keyboardType: .numberPad
         )
         textField.isHidden = true
         textField.alpha = 0
@@ -57,7 +64,6 @@ final class DefaultEnterPhoneView: UIView, EnterPhoneView {
     }
     
     func configureView() {
-        print("viewDidLoad")
         backgroundColor = UIColor.Background.primary
         addSubview(verticalStackView)
         addSubview(sendCodeButton)
@@ -67,14 +73,19 @@ final class DefaultEnterPhoneView: UIView, EnterPhoneView {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
         setNeedsUpdateConstraints()
+        sendCodeButton.addTarget(self, action: #selector(sendCodeButtonTapped), for: .touchUpInside)
+        _ = phoneTextField.becomeFirstResponder()
     }
     
     func showSmsTextField(_ show: Bool) {
-        UIView.animate(withDuration: 0.3) {
-            self.smsCodeTextField.alpha = show ? 1 : 0
-            self.smsCodeTextField.isHidden = !show
-        }
+        UIView.animate(
+            withDuration: 0.3,
+            animations: {
+                self.smsCodeTextField.alpha = show ? 1 : 0
+                self.smsCodeTextField.isHidden = !show
+        })
         sendCodeButton.setButtonState(to: .waiting)
+        _ = self.smsCodeTextField.becomeFirstResponder()
     }
     
     
@@ -103,5 +114,14 @@ final class DefaultEnterPhoneView: UIView, EnterPhoneView {
         ])
     }
     
+    @objc private func sendCodeButtonTapped() {
+        var phone: String?
+        if phoneTextField.isValidNumber {
+            phone = phoneTextField.text?.onlyNumbers()
+        } else {
+            phone = nil
+        }
+        controller.sendCodeButtonTapped(phoneNumber: phone)
+    }
         
 }

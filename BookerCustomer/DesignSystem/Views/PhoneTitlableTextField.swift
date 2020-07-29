@@ -11,8 +11,16 @@ import PhoneNumberKit
 
 final class PhoneTitlableTextField: TitlableTextField {
     
+    private var phoneNumberTextField = PhoneNumberTextField()
+    
+    var isValidNumber: Bool {
+        get {
+            return phoneNumberTextField.isValidNumber
+        }
+    }
+    
     override func getBaseTextField() -> UITextField {
-        let textField = PhoneNumberTextField()
+        let textField = phoneNumberTextField
         textField.text = "+7"
         textField.delegate = self
         textField.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
@@ -45,8 +53,8 @@ extension PhoneTitlableTextField: UITextFieldDelegate {
             if isBackSpace {
                 return textField.text != "+7"
             } else  {
-                let textCount = textField.text?.count ?? 0
-                if textCount == 16 { return false }
+                let textCount = textField.text?.onlyNumbers().count ?? 0
+                if textCount == 11 { return false }
             }
         }
         return range.location != 0 && range.location != 1

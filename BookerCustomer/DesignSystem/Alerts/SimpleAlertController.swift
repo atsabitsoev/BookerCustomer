@@ -10,7 +10,7 @@ import UIKit
 
 final class SimpleAlertController: UIViewController {
     
-    private var action: () -> ()
+    private var action: (() -> Void)?
     
     private let alertView: UIView = {
         let view = UIView()
@@ -41,7 +41,7 @@ final class SimpleAlertController: UIViewController {
         return stack
     }()
     
-    init(title: String?, message: String?, action: @escaping () -> ()) {
+    init(title: String?, message: String?, action: (() -> (Void))?) {
         self.action = action
         super.init(nibName: nil, bundle: nil)
         titleLabel.text = title
@@ -70,7 +70,7 @@ final class SimpleAlertController: UIViewController {
         verticalStack.addArrangedSubview(titleLabel)
         verticalStack.addArrangedSubview(messageLabel)
         verticalStack.addArrangedSubview(okButton)
-        verticalStack.setCustomSpacing(16, after: messageLabel)
+        verticalStack.setCustomSpacing(30, after: messageLabel)
         alertView.translatesAutoresizingMaskIntoConstraints = false
         verticalStack.translatesAutoresizingMaskIntoConstraints = false
         okButton.translatesAutoresizingMaskIntoConstraints = false
@@ -103,6 +103,7 @@ final class SimpleAlertController: UIViewController {
     }
     
     @objc private func okButtonTapped() {
-        action()
+        self.dismiss(animated: true, completion: nil)
+        action?()
     }
 }

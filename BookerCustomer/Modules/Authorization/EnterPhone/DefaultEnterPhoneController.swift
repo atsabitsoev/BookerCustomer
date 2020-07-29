@@ -11,6 +11,7 @@ import UIKit
 final class DefaultEnterPhoneController: UIViewController, EnterPhoneController {
     
     private var enterPhoneView: EnterPhoneView!
+    private var alertManager: AlertManager!
     
     override func loadView() {
         super.loadView()
@@ -22,14 +23,15 @@ final class DefaultEnterPhoneController: UIViewController, EnterPhoneController 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Авторизация"
+        self.alertManager = AlertManager(vc: self)
         enterPhoneView.configureView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
-            self.enterPhoneView.showSmsTextField(true)
+    func sendCodeButtonTapped(phoneNumber: String?) {
+        if let _ = phoneNumber {
+            enterPhoneView.showSmsTextField(true)
+        } else {
+            alertManager.showAlert(title: "Ошибка", message: "Введен неверный номер телефона", action: nil)
         }
-        
     }
 }

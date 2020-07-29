@@ -16,7 +16,7 @@ final class BCButton: UIButton {
         case ready
     }
     
-    private let tapMeTitle: String
+    private var tapMeTitle: String
     private let waitingTitle: String
     private let readyTitle: String
     
@@ -65,6 +65,11 @@ final class BCButton: UIButton {
             isUserInteractionEnabled = false
         }
         self.buttonState = state
+    }
+    
+    func setTapMeTitle(to title: String) {
+        self.tapMeTitle = title
+        setButtonState(to: self.buttonState)
     }
     
     

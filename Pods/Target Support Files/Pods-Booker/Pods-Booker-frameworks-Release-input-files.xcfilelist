@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Booker/Pods-Booker-frameworks.sh
+${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

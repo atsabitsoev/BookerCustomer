@@ -24,7 +24,6 @@ final class DefaultEnterPhoneController: UIViewController, EnterPhoneController 
         super.viewDidLoad()
         title = "Авторизация"
         self.alertManager = AlertManager(vc: self)
-        enterPhoneView.configureView()
     }
     
     func sendCodeButtonTapped(phoneNumber: String?) {

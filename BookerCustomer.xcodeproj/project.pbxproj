@@ -40,6 +40,9 @@
 		AC7EFB5424C72D4C00C63A08 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */; };
 		AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7EFB5524C73D4900C63A08 /* Fonts.swift */; };
 		AC7EFB5A24C75B0D00C63A08 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC7EFB5924C75B0D00C63A08 /* .gitignore */; };
+		AC82C4B124D2914700250D4C /* DefaultEnterNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82C4B024D2914700250D4C /* DefaultEnterNameController.swift */; };
+		AC82C4B324D2917D00250D4C /* DefaultEnterNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82C4B224D2917D00250D4C /* DefaultEnterNameView.swift */; };
+		AC82C4B524D2918600250D4C /* EnterNameProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82C4B424D2918600250D4C /* EnterNameProtocols.swift */; };
 		AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */; };
 		AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84D18E24C8950400D2ED75 /* DiscountCell.swift */; };
 		ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8819424CB2B040013A01D /* SimpleAlertController.swift */; };
@@ -85,6 +88,9 @@
 		AC7EFB5324C72D4C00C63A08 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		AC7EFB5524C73D4900C63A08 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		AC7EFB5924C75B0D00C63A08 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AC82C4B024D2914700250D4C /* DefaultEnterNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEnterNameController.swift; sourceTree = "<group>"; };
+		AC82C4B224D2917D00250D4C /* DefaultEnterNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEnterNameView.swift; sourceTree = "<group>"; };
+		AC82C4B424D2918600250D4C /* EnterNameProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameProtocols.swift; sourceTree = "<group>"; };
 		AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		AC84D18E24C8950400D2ED75 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
 		ACC8819424CB2B040013A01D /* SimpleAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertController.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				AC2EAB0824D0BAF800E8B0F3 /* EnterPhone */,
+				AC82C4AF24D2911900250D4C /* EnterName */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -269,6 +276,16 @@
 				AC505FBC24D1119C00D8A5B8 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC82C4AF24D2911900250D4C /* EnterName */ = {
+			isa = PBXGroup;
+			children = (
+				AC82C4B024D2914700250D4C /* DefaultEnterNameController.swift */,
+				AC82C4B224D2917D00250D4C /* DefaultEnterNameView.swift */,
+				AC82C4B424D2918600250D4C /* EnterNameProtocols.swift */,
+			);
+			path = EnterName;
 			sourceTree = "<group>";
 		};
 		AC84D18D24C892CF00D2ED75 /* Cells */ = {
@@ -428,8 +445,10 @@
 				AC26A3E524CC6CF900B37536 /* DefaultPromotionsView.swift in Sources */,
 				AC505FC024D116D400D8A5B8 /* AlertManager.swift in Sources */,
 				AC505FBD24D1119C00D8A5B8 /* String+Extensions.swift in Sources */,
+				AC82C4B124D2914700250D4C /* DefaultEnterNameController.swift in Sources */,
 				AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */,
 				AC45994D24CD3301005871BF /* DefaultSettingsView.swift in Sources */,
+				AC82C4B524D2918600250D4C /* EnterNameProtocols.swift in Sources */,
 				ACF5324C24CB9F9000E832AC /* BCTabBarController.swift in Sources */,
 				AC7B33E524CB924B00CD19B9 /* BCSwitchCell.swift in Sources */,
 				ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */,
@@ -441,6 +460,7 @@
 				AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */,
 				AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */,
 				AC26A3E724CC6CFF00B37536 /* PromotionsProtocols.swift in Sources */,
+				AC82C4B324D2917D00250D4C /* DefaultEnterNameView.swift in Sources */,
 				AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */,
 				AC6966C024D0CEEB00943C62 /* PhoneTitlableTextField.swift in Sources */,
 				AC2FFE2A24C49755003EF12C /* SceneDelegate.swift in Sources */,

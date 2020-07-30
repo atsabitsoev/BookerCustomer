@@ -18,6 +18,7 @@ final class DefaultEnterPhoneView: UIView, EnterPhoneView {
             placeholder: "+7 (000) 000-00-00",
             keyboardType: .numberPad
         )
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     private let smsCodeTextField: TitlableTextField = {
@@ -33,12 +34,14 @@ final class DefaultEnterPhoneView: UIView, EnterPhoneView {
         )
         textField.isHidden = true
         textField.alpha = 0
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     private let verticalStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 8
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     private let sendCodeButton: BCButton = {
@@ -69,9 +72,6 @@ final class DefaultEnterPhoneView: UIView, EnterPhoneView {
         addSubview(sendCodeButton)
         verticalStackView.addArrangedSubview(phoneTextField)
         verticalStackView.addArrangedSubview(smsCodeTextField)
-        [verticalStackView, phoneTextField, smsCodeTextField].forEach { (view) in
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
         setNeedsUpdateConstraints()
         sendCodeButton.addTarget(self, action: #selector(sendCodeButtonTapped), for: .touchUpInside)
         _ = phoneTextField.becomeFirstResponder()

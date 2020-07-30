@@ -11,7 +11,7 @@ import Foundation
 extension String {
     func onlyNumbers() -> String {
         let chars = self.compactMap { (char) -> String? in
-            if ["1","2","3","4","5","6","7","8","9","0"].contains(char) {
+            if Set(["1","2","3","4","5","6","7","8","9","0"]).contains(char) {
                 return "\(char)"
             } else {
                 return nil

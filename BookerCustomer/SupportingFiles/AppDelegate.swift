@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = BCNavigationController(rootViewController: DefaultEnterPhoneController())//BCTabBarController()
+        window?.rootViewController = BCNavigationController(rootViewController: DefaultEnterNameController())//BCTabBarController()
         window?.makeKeyAndVisible()
         return true
     }

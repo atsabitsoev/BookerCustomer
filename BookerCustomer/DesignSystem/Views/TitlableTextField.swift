@@ -110,6 +110,10 @@ class TitlableTextField: UIView {
         return true
     }
     
+    func addTarget(target: Any?, action: Selector, for event: UIControl.Event) {
+        mainTextField.addTarget(target, action: action, for: event)
+    }
+    
     func getBaseTextField() -> UITextField {
         return UITextField()
     }

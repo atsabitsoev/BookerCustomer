@@ -31,8 +31,8 @@ extension UIColor {
     struct Cell {
         static let background = UIColor.Background.primaryLight
         static let mainView = UIColor.white
-        static let title = UIColor.black
         static let description = UIColor(named: "cellDescription")!
+        static let title = UIColor.black
     }
     
     struct Alert {

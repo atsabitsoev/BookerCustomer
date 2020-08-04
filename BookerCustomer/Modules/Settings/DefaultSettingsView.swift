@@ -44,11 +44,6 @@ final class DefaultSettingsView: UIView, SettingsViewing {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    private let footerView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 104))
-        view.backgroundColor = UIColor.Background.primaryLight
-        return view
-    }()
     
     init(controller: SettingsControlling) {
         self.controller = controller
@@ -79,6 +74,7 @@ final class DefaultSettingsView: UIView, SettingsViewing {
         
         backgroundColor = UIColor.Background.primaryLight
         enableSaveButton(false)
+        addSubview(saveButton)
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         
         nameCell.textFieldTag = 0
@@ -88,10 +84,10 @@ final class DefaultSettingsView: UIView, SettingsViewing {
         
         addSubview(tableView)
         tableView.alwaysBounceVertical = false
-        tableView.tableFooterView = footerView
-        footerView.addSubview(saveButton)
         tableView.delegate = self
         tableView.dataSource = self
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        addGestureRecognizer(recognizer)
         
         setNeedsUpdateConstraints()
     }
@@ -103,7 +99,7 @@ final class DefaultSettingsView: UIView, SettingsViewing {
     private func setupTableViewConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: saveButton.topAnchor, constant: -24),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
@@ -111,16 +107,19 @@ final class DefaultSettingsView: UIView, SettingsViewing {
     
     private func setupSaveButtonConstraints() {
         NSLayoutConstraint.activate([
-            saveButton.topAnchor.constraint(equalTo: footerView.topAnchor, constant: 40),
-            saveButton.bottomAnchor.constraint(equalTo: footerView.bottomAnchor, constant: -16),
-            saveButton.leadingAnchor.constraint(equalTo: footerView.leadingAnchor, constant: 24),
-            saveButton.trailingAnchor.constraint(equalTo: footerView.trailingAnchor, constant: -24),
+            saveButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -24),
+            saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             saveButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
     
     @objc private func saveButtonTapped() {
         controller.saveButtonTapped()
+    }
+    
+    @objc private func viewTapped() {
+        endEditing(true)
     }
     
 }

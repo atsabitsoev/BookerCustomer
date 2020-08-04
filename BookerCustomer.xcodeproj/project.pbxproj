@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43A2E867B9C0AE8ABE9C6381 /* Pods_Booker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A35B05C9B8E401AC5DCBE42 /* Pods_Booker.framework */; };
+		AC014D4324D8FA9E0047D972 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC014D4224D8FA9E0047D972 /* Vibration.swift */; };
 		AC087F3E24D4D4D300895D0A /* ShadowTitlableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC087F3D24D4D4D300895D0A /* ShadowTitlableTextField.swift */; };
 		AC0D0AF224CD2A7D00D75F29 /* DefaultDiscountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D0AF124CD2A7D00D75F29 /* DefaultDiscountsController.swift */; };
 		AC0D0AF424CD2AA800D75F29 /* DefaultDiscountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D0AF324CD2AA800D75F29 /* DefaultDiscountsView.swift */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		3989A40E7591934DC1D998A1 /* Pods-Booker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booker.debug.xcconfig"; path = "Target Support Files/Pods-Booker/Pods-Booker.debug.xcconfig"; sourceTree = "<group>"; };
 		9A35B05C9B8E401AC5DCBE42 /* Pods_Booker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Booker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC014D4224D8FA9E0047D972 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		AC087F3D24D4D4D300895D0A /* ShadowTitlableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTitlableTextField.swift; sourceTree = "<group>"; };
 		AC0D0AF124CD2A7D00D75F29 /* DefaultDiscountsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiscountsController.swift; sourceTree = "<group>"; };
 		AC0D0AF324CD2AA800D75F29 /* DefaultDiscountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiscountsView.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				AC7EFB4424C7156D00C63A08 /* Views */,
 				AC7EFB4824C7166900C63A08 /* Colors.swift */,
 				AC7EFB5524C73D4900C63A08 /* Fonts.swift */,
+				AC014D4224D8FA9E0047D972 /* Vibration.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				AC82C4B324D2917D00250D4C /* DefaultEnterNameView.swift in Sources */,
 				AC087F3E24D4D4D300895D0A /* ShadowTitlableTextField.swift in Sources */,
 				AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */,
+				AC014D4324D8FA9E0047D972 /* Vibration.swift in Sources */,
 				AC6966C024D0CEEB00943C62 /* PhoneTitlableTextField.swift in Sources */,
 				AC2FFE2A24C49755003EF12C /* SceneDelegate.swift in Sources */,
 				ACEDCA0524CB158F00790186 /* BCTextFieldCell.swift in Sources */,

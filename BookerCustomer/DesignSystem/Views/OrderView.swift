@@ -204,6 +204,7 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     @objc private func doneDatePickerTapped() {
+        Vibration.light.vibrate()
         date = datePicker.date
         let dateString = UIScreen.main.nativeBounds.height == 1136 ? date?.toStringIn2Lines() : date?.toString()
         dateButton.setTitle(dateString, for: .normal)
@@ -230,6 +231,7 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     @objc private func doneCountPickerTapped() {
+        Vibration.light.vibrate()
         personsCount = personsCountPicker.selectedRow(inComponent: 0) + 1
         personsCountButton.setTitle(personsString(from: personsCount), for: .normal)
         helpingTfPicker.resignFirstResponder()

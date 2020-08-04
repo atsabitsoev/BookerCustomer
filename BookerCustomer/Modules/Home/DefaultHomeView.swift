@@ -13,7 +13,7 @@ final class DefaultHomeView: UIView, HomeViewing {
     private var controller: HomeControlling
     
     private lazy var orderView: OrderView = { [unowned self] in
-        let startState = OrderView.State.orderReady
+        let startState = OrderView.State.shouldOrder
         let view = OrderView(
             state: startState,
             date: nil,

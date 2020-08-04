@@ -19,11 +19,16 @@ class TitlableTextField: UIView {
     var text: String? {
         get {
             return mainTextField.text
+        } set {
+            mainTextField.text = newValue
         }
     }
     
     private var title: String
     private var placeholder: String
+    var textColor: UIColor { return UIColor.Background.titleLight }
+    var textFieldBackgroundColor: UIColor { return UIColor.Background.titleDark }
+    var keyboardAppearance: UIKeyboardAppearance { return .dark }
     
     private let titleInsetView: UIView = {
         let view = UIView()
@@ -33,7 +38,7 @@ class TitlableTextField: UIView {
     private lazy var titleLabel: UILabel = { [unowned self] in
         let label = UILabel()
         label.font = UIFont.Label.forTextField
-        label.textColor = UIColor.Background.title
+        label.textColor = self.textColor
         label.text = self.title
         return label
     }()
@@ -47,13 +52,13 @@ class TitlableTextField: UIView {
         let textField = self.getBaseTextField()
         textField.placeholder = self.placeholder
         textField.font = UIFont.TextField.autorization
-        textField.textColor = UIColor.Background.title
-        textField.backgroundColor = UIColor.Background.secondary
+        textField.textColor = self.textColor
+        textField.backgroundColor = self.textFieldBackgroundColor
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 1))
         textField.layer.cornerRadius = 16
         textField.leftViewMode = .always
         textField.autocorrectionType = .no
-        textField.keyboardAppearance = .dark
+        textField.keyboardAppearance = self.keyboardAppearance
         return textField
     }()
     private let verticalStack: UIStackView = {

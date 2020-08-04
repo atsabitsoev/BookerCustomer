@@ -15,22 +15,24 @@ extension UIColor {
         static let waiting = UIColor(named: "buttonWaiting")
         static let ready = UIColor(named: "buttonReady")
         static let destructive = UIColor(named: "buttonDestructive")
-        static let title = UIColor.white
+        static let titleLight = UIColor.white
+        static let titleDark = UIColor.black
     }
     
     struct Background {
-        static let primary = UIColor(named: "backgroundPrimary")
-        static let secondary = UIColor(named: "backgroundSecondary")
-        static let pickerView = UIColor.black.withAlphaComponent(0.95)
-        static let toolbar = UIColor.black
-        static let title = UIColor.white
+        static let primaryLight = UIColor(named: "backgroundPrimary")!
+        static let primaryDark = UIColor.black
+        static let pickerView = UIColor.white
+        static let toolbar = UIColor.white
+        static let titleLight = UIColor.white
+        static let titleDark = UIColor.black
     }
     
     struct Cell {
-        static let background = UIColor.Background.primary
+        static let background = UIColor.Background.primaryLight
         static let mainView = UIColor.white
         static let title = UIColor.black
-        static let description = UIColor(named: "cellDescription")
+        static let description = UIColor(named: "cellDescription")!
     }
     
     struct Alert {
@@ -40,4 +42,11 @@ extension UIColor {
         static let message = UIColor.black
     }
     
+    struct Shadow {
+        static let main = UIColor(named: "shadowMain")!
+    }
+    
+    struct Label {
+        static let help = UIColor(named: "labelHelp")
+    }
 }

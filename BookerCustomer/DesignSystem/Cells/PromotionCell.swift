@@ -14,19 +14,39 @@ final class PromotionCell: UITableViewCell {
     static let identifier = "PromotionCell"
     
     private let horizontalInset: CGFloat = 26
-    private let verticalInset: CGFloat = 10
+    private let verticalInset: CGFloat = 20
     
-    private let promotionImage = UIImageView()
+    private let promotionImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFill
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
     private let mainView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
         view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.Cell.mainView
+        return view
+    }()
+    private let shadowView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 16
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.Cell.mainView
+        view.layer.shadowColor = UIColor.Shadow.main.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.shadowRadius = 10
+        view.layer.shadowOpacity = 0.18
         return view
     }()
     private let descriptionView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.Cell.mainView
+        view.layer.cornerRadius = 16
+        view.clipsToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     private let titleLabel: UILabel = {
@@ -43,14 +63,11 @@ final class PromotionCell: UITableViewCell {
         label.numberOfLines = 0
         return label
     }()
-    private let mainVerticalStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        return stack
-    }()
     private let descriptionStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
+        stack.spacing = 8
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -66,7 +83,8 @@ final class PromotionCell: UITableViewCell {
     override func updateConstraints() {
         setupPromotionImageConstraints()
         setupMainViewConstraints()
-        setupMainVerticalStackConstraints()
+        setupShadowViewConstraints()
+        setupDescriptionViewConstraints()
         setupDescriptionStackConstraints()
         super.updateConstraints()
     }
@@ -87,25 +105,28 @@ final class PromotionCell: UITableViewCell {
     
     private func configureView() {
         selectionStyle = .none
+        clipsToBounds = true
         contentView.backgroundColor = UIColor.Cell.background
+        contentView.addSubview(shadowView)
         contentView.addSubview(mainView)
-        mainView.addSubview(mainVerticalStack)
-        mainVerticalStack.addArrangedSubview(promotionImage)
-        mainVerticalStack.addArrangedSubview(descriptionView)
+        mainView.addSubview(promotionImage)
+        mainView.addSubview(descriptionView)
         descriptionView.addSubview(descriptionStack)
         descriptionStack.addArrangedSubview(titleLabel)
         descriptionStack.addArrangedSubview(descriptionLabel)
         setNeedsUpdateConstraints()
-        mainView.translatesAutoresizingMaskIntoConstraints = false
-        mainVerticalStack.translatesAutoresizingMaskIntoConstraints = false
-        descriptionStack.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setupPromotionImageConstraints() {
         let imageWidth = UIScreen.main.bounds.width - 2 * horizontalInset
-        let imageHeight = imageWidth / 16 * 9
+        let imageHeight = imageWidth
         NSLayoutConstraint.activate([
-            promotionImage.heightAnchor.constraint(equalToConstant: imageHeight)
+            promotionImage.heightAnchor.constraint(equalToConstant: imageHeight),
+            promotionImage.widthAnchor.constraint(equalToConstant: imageWidth),
+            promotionImage.topAnchor.constraint(equalTo: mainView.topAnchor),
+            promotionImage.bottomAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 16),
+            promotionImage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+            promotionImage.trailingAnchor.constraint(equalTo: promotionImage.trailingAnchor)
         ])
     }
     
@@ -118,19 +139,27 @@ final class PromotionCell: UITableViewCell {
         ])
     }
     
-    private func setupMainVerticalStackConstraints() {
+    private func setupShadowViewConstraints() {
         NSLayoutConstraint.activate([
-            mainVerticalStack.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 0),
-            mainVerticalStack.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 0),
-            mainVerticalStack.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 0),
-            mainVerticalStack.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: 0)
+            shadowView.topAnchor.constraint(equalTo: mainView.topAnchor),
+            shadowView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor),
+            shadowView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+            shadowView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor)
+        ])
+    }
+    
+    private func setupDescriptionViewConstraints() {
+        NSLayoutConstraint.activate([
+            descriptionView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor),
+            descriptionView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+            descriptionView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
         ])
     }
     
     private func setupDescriptionStackConstraints() {
         NSLayoutConstraint.activate([
-            descriptionStack.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 8),
-            descriptionStack.bottomAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: -8),
+            descriptionStack.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 16),
+            descriptionStack.bottomAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: -16),
             descriptionStack.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor, constant: 16),
             descriptionStack.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor, constant: -16)
         ])

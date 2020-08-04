@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43A2E867B9C0AE8ABE9C6381 /* Pods_Booker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A35B05C9B8E401AC5DCBE42 /* Pods_Booker.framework */; };
+		AC087F3E24D4D4D300895D0A /* ShadowTitlableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC087F3D24D4D4D300895D0A /* ShadowTitlableTextField.swift */; };
 		AC0D0AF224CD2A7D00D75F29 /* DefaultDiscountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D0AF124CD2A7D00D75F29 /* DefaultDiscountsController.swift */; };
 		AC0D0AF424CD2AA800D75F29 /* DefaultDiscountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D0AF324CD2AA800D75F29 /* DefaultDiscountsView.swift */; };
 		AC0D0AF624CD2AD100D75F29 /* DiscountsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D0AF524CD2AD100D75F29 /* DiscountsProtocols.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		3989A40E7591934DC1D998A1 /* Pods-Booker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booker.debug.xcconfig"; path = "Target Support Files/Pods-Booker/Pods-Booker.debug.xcconfig"; sourceTree = "<group>"; };
 		9A35B05C9B8E401AC5DCBE42 /* Pods_Booker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Booker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC087F3D24D4D4D300895D0A /* ShadowTitlableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTitlableTextField.swift; sourceTree = "<group>"; };
 		AC0D0AF124CD2A7D00D75F29 /* DefaultDiscountsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiscountsController.swift; sourceTree = "<group>"; };
 		AC0D0AF324CD2AA800D75F29 /* DefaultDiscountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiscountsView.swift; sourceTree = "<group>"; };
 		AC0D0AF524CD2AD100D75F29 /* DiscountsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountsProtocols.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		AC82C4B424D2918600250D4C /* EnterNameProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameProtocols.swift; sourceTree = "<group>"; };
 		AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		AC84D18E24C8950400D2ED75 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		ACACEC6A24D4E74500BBFBDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ACC8819424CB2B040013A01D /* SimpleAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertController.swift; sourceTree = "<group>"; };
 		ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCTextFieldCell.swift; sourceTree = "<group>"; };
 		ACF5324924CB9D3C00E832AC /* BCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCNavigationController.swift; sourceTree = "<group>"; };
@@ -265,6 +268,7 @@
 				AC7EFB5024C72CB400C63A08 /* OrderView.swift */,
 				AC2EAB0424D0B79D00E8B0F3 /* TitlableTextField.swift */,
 				AC6966BF24D0CEEB00943C62 /* PhoneTitlableTextField.swift */,
+				AC087F3D24D4D4D300895D0A /* ShadowTitlableTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,11 +359,12 @@
 			};
 			buildConfigurationList = AC2FFE1F24C49755003EF12C /* Build configuration list for PBXProject "BookerCustomer" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = AC2FFE1B24C49755003EF12C;
 			productRefGroup = AC2FFE2524C49755003EF12C /* Products */;
@@ -461,6 +466,7 @@
 				AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */,
 				AC26A3E724CC6CFF00B37536 /* PromotionsProtocols.swift in Sources */,
 				AC82C4B324D2917D00250D4C /* DefaultEnterNameView.swift in Sources */,
+				AC087F3E24D4D4D300895D0A /* ShadowTitlableTextField.swift in Sources */,
 				AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */,
 				AC6966C024D0CEEB00943C62 /* PhoneTitlableTextField.swift in Sources */,
 				AC2FFE2A24C49755003EF12C /* SceneDelegate.swift in Sources */,
@@ -479,6 +485,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AC2FFE3324C49756003EF12C /* Base */,
+				ACACEC6A24D4E74500BBFBDF /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -490,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -550,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -16,7 +16,18 @@ final class DiscountCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = UIColor.Cell.mainView
         view.layer.cornerRadius = 16
+        view.layer.shadowColor = UIColor.Shadow.main.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowRadius = 8
+        view.layer.shadowOpacity = 0.1
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    private let iconImage: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "saleIcon")!)
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -28,13 +39,15 @@ final class DiscountCell: UITableViewCell {
     private let chevronImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "chevronRight")!)
         imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     private let horizontalStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.alignment = .center
-        stack.spacing = 8
+        stack.spacing = 16
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -57,11 +70,9 @@ final class DiscountCell: UITableViewCell {
     private func configureView() {
         selectionStyle = .none
         contentView.backgroundColor = UIColor.Cell.background
-        mainView.translatesAutoresizingMaskIntoConstraints = false
-        horizontalStack.translatesAutoresizingMaskIntoConstraints = false
-        chevronImage.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(mainView)
         mainView.addSubview(horizontalStack)
+        horizontalStack.addArrangedSubview(iconImage)
         horizontalStack.addArrangedSubview(titleLabel)
         horizontalStack.addArrangedSubview(chevronImage)
         setNeedsUpdateConstraints()
@@ -69,15 +80,15 @@ final class DiscountCell: UITableViewCell {
     
     override func updateConstraints() {
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            mainView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
             mainView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24)
         ])
         
         NSLayoutConstraint.activate([
-            horizontalStack.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 16),
-            horizontalStack.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -16),
+            horizontalStack.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 24),
+            horizontalStack.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -24),
             horizontalStack.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20),
             horizontalStack.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -20)
         ])
@@ -85,6 +96,11 @@ final class DiscountCell: UITableViewCell {
         NSLayoutConstraint.activate([
             chevronImage.widthAnchor.constraint(equalToConstant: 16),
             chevronImage.heightAnchor.constraint(equalToConstant: 16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            iconImage.widthAnchor.constraint(equalToConstant: 30),
+            iconImage.heightAnchor.constraint(equalToConstant: 30)
         ])
         super.updateConstraints()
     }

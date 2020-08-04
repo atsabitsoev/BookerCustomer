@@ -9,7 +9,7 @@
 import UIKit
 import PhoneNumberKit
 
-final class PhoneTitlableTextField: TitlableTextField {
+final class PhoneTitlableTextField: ShadowTitlableTextField {
     
     private var phoneNumberTextField = PhoneNumberTextField()
     
@@ -24,6 +24,10 @@ final class PhoneTitlableTextField: TitlableTextField {
         textField.text = "+7"
         textField.delegate = self
         textField.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
+        textField.layer.shadowColor = UIColor.Shadow.main.cgColor
+        textField.layer.shadowOffset = CGSize(width: 0, height: 2)
+        textField.layer.shadowOpacity = 0.1
+        textField.layer.shadowRadius = 8
         return textField
     }
     

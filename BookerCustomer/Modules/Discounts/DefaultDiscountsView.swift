@@ -19,7 +19,7 @@ final class DefaultDiscountsView: UIView, DiscountsViewing {
     private let tableView: UITableView = {
         let table = UITableView()
         table.separatorStyle = .none
-        table.backgroundColor = UIColor.Background.primary
+        table.backgroundColor = UIColor.Background.primaryLight
         table.register(DiscountCell.self, forCellReuseIdentifier: DiscountCell.identifier)
         table.translatesAutoresizingMaskIntoConstraints = false
         table.clipsToBounds = false
@@ -41,7 +41,7 @@ final class DefaultDiscountsView: UIView, DiscountsViewing {
     }
     
     func configureView() {
-        backgroundColor = UIColor.Background.primary
+        backgroundColor = UIColor.Background.primaryLight
         addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self

@@ -14,11 +14,11 @@ final class DefaultPromotionsView: UIView, PromotionsViewing {
     
     fileprivate var promotionItems: [PromotionItem] = [
         PromotionItem(
-            imageUrl: "https://www.abc.net.au/cm/rimage/10575960-3x2-xlarge.jpg?v=3",
+            imageUrl: "https://media-cdn.tripadvisor.com/media/photo-s/1a/0b/7f/8d/pizza-food-style.jpg",
             title: "Привет Андрей",
             description: "Адаыо вадлоы адлвоадыва двлы аовыл аодылаы"),
         PromotionItem(
-            imageUrl: "https://www.abc.net.au/cm/rimage/10574678-3x2-xlarge.jpg?v=4",
+            imageUrl: "https://avatars.mds.yandex.net/get-altay/1938975/2a0000016ed2b34d5d3fa93c65512e1dc39f/XXXL",
             title: "Привет Иван",
             description: "Адаыо вадлоы адлвоадыва двлы аовыл аодылаы"),
         PromotionItem(
@@ -50,7 +50,7 @@ final class DefaultPromotionsView: UIView, PromotionsViewing {
     private let tableView: UITableView = {
         let table = UITableView()
         table.separatorStyle = .none
-        table.backgroundColor = UIColor.Background.primary
+        table.backgroundColor = UIColor.Background.primaryLight
         table.translatesAutoresizingMaskIntoConstraints = false
         table.register(PromotionCell.self, forCellReuseIdentifier: PromotionCell.identifier)
         return table
@@ -71,7 +71,7 @@ final class DefaultPromotionsView: UIView, PromotionsViewing {
     }
     
     func configureView() {
-        backgroundColor = UIColor.Background.primary
+        backgroundColor = UIColor.Background.primaryLight
         tableView.delegate = self
         tableView.dataSource = self
         addSubview(tableView)

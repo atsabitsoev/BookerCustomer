@@ -18,6 +18,10 @@ final class BCSwitchCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = UIColor.Cell.mainView
         view.layer.cornerRadius = 16
+        view.layer.shadowColor = UIColor.Shadow.main.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowOpacity = 0.1
+        view.layer.shadowRadius = 8
         return view
     }()
     private let titleLabel: UILabel = {
@@ -36,6 +40,7 @@ final class BCSwitchCell: UITableViewCell {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.alignment = .center
+        stack.spacing = 12
         return stack
     }()
     
@@ -74,10 +79,10 @@ final class BCSwitchCell: UITableViewCell {
     
     private func setupMainViewConstraints() {
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            mainView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
-            mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24)
+            mainView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+            mainView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 26),
+            mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -26)
         ])
     }
     

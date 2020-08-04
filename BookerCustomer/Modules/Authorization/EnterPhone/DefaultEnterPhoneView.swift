@@ -26,7 +26,7 @@ final class DefaultEnterPhoneView: UIView, EnterPhoneView {
         if #available(iOS 12.0, *) {
             textType = .oneTimeCode
         }
-        let textField = TitlableTextField(
+        let textField = ShadowTitlableTextField(
             title: "Код из СМС",
             placeholder: "******",
             textType: textType,
@@ -67,7 +67,7 @@ final class DefaultEnterPhoneView: UIView, EnterPhoneView {
     }
     
     func configureView() {
-        backgroundColor = UIColor.Background.primary
+        backgroundColor = UIColor.Background.primaryLight
         addSubview(verticalStackView)
         addSubview(sendCodeButton)
         verticalStackView.addArrangedSubview(phoneTextField)

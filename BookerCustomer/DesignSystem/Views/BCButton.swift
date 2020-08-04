@@ -35,7 +35,7 @@ final class BCButton: UIButton {
         self.readyTitle = readyTitle
         super.init(frame: .zero)
         layer.cornerRadius = 16
-        setTitleColor(UIColor.Button.title, for: .normal)
+        setTitleColor(UIColor.Button.titleLight, for: .normal)
         titleLabel?.font = UIFont.Button.primary
         setButtonState(to: buttonState)
     }
@@ -53,14 +53,17 @@ final class BCButton: UIButton {
         switch state {
         case .tapMe:
             backgroundColor = UIColor.Button.tapOnMe
+            setTitleColor(UIColor.Button.titleLight, for: .normal)
             setTitle(tapMeTitle, for: .normal)
             isUserInteractionEnabled = true
         case .waiting:
             backgroundColor = UIColor.Button.waiting
+            setTitleColor(UIColor.Button.titleDark, for: .normal)
             setTitle(waitingTitle, for: .normal)
             isUserInteractionEnabled = false
         case .ready:
             backgroundColor = UIColor.Button.ready
+            setTitleColor(UIColor.Button.titleLight, for: .normal)
             setTitle(readyTitle, for: .normal)
             isUserInteractionEnabled = false
         }
@@ -83,7 +86,7 @@ final class BCButton: UIButton {
     
     override var isEnabled: Bool {
         didSet {
-            alpha = isEnabled ? 1 : 0.5
+            alpha = isEnabled ? 1 : 0.4
         }
     }
     

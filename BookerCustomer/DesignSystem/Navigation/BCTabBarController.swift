@@ -13,7 +13,9 @@ final class BCTabBarController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
         tabBar.isTranslucent = false
-        tabBar.barTintColor = UIColor.Background.secondary
+        tabBar.shadowImage = UIImage()
+        tabBar.backgroundImage = UIImage()
+        tabBar.barTintColor = UIColor.Background.primaryLight
         tabBar.tintColor = UIColor.Button.tapOnMe
         let homeVC = BCNavigationController(rootViewController: DefaultHomeController())
         homeVC.tabBarItem = UITabBarItem(title: "Бронь", image: UIImage(named: "orderTabBarItem"), tag: 0)

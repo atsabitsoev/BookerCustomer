@@ -13,10 +13,12 @@ final class BCNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = UIColor.Background.secondary
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Background.title]
+        navigationBar.barTintColor = UIColor.Background.primaryLight
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.NavigationBar.title]
         navigationBar.tintColor = UIColor.Button.tapOnMe
+        navigationBar.shadowImage = UIImage()
+        
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .default }
 }

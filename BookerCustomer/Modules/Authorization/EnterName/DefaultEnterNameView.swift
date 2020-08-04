@@ -13,12 +13,22 @@ final class DefaultEnterNameView: UIView, EnterNameViewing {
     private var controller: EnterNameControlling
     
     private let nameTextField: TitlableTextField = {
-        let textField = TitlableTextField(title: "Имя", placeholder: "Иван", textType: .name, keyboardType: .default)
+        let textField = ShadowTitlableTextField(
+            title: "Имя",
+            placeholder: "Иван",
+            textType: .name,
+            keyboardType: .default
+        )
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     fileprivate let lastnameTextField: TitlableTextField = {
-        let textField = TitlableTextField(title: "Фамилия (необязательно)", placeholder: "Иванов", textType: .familyName, keyboardType: .default)
+        let textField = ShadowTitlableTextField(
+            title: "Фамилия (необязательно)",
+            placeholder: "Иванов",
+            textType: .familyName,
+            keyboardType: .default
+        )
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -52,7 +62,7 @@ final class DefaultEnterNameView: UIView, EnterNameViewing {
     }
     
     func configureView() {
-        backgroundColor = UIColor.Background.primary
+        backgroundColor = UIColor.Background.primaryLight
         nameTextField.delegate = self
         lastnameTextField.delegate = self
         nameTextField.addTarget(target: self, action: #selector(nameChanged), for: .editingChanged)

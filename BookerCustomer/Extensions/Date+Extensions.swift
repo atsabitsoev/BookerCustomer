@@ -17,8 +17,20 @@ extension Date {
         dateFormatter.locale = Locale(identifier: "ru_RU")
 
         let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "H:mm"
+        timeFormatter.dateFormat = "HH:mm"
         
         return "\(dateFormatter.string(from: self)), \(timeFormatter.string(from: self))"
+    }
+    
+    func toStringIn2Lines() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.doesRelativeDateFormatting = true
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        
+        return "\(dateFormatter.string(from: self))\n\(timeFormatter.string(from: self))"
     }
 }

@@ -15,7 +15,7 @@ final class DefaultSettingsView: UIView, SettingsViewing {
     private let tableView: UITableView = {
         let table = UITableView()
         table.separatorStyle = .none
-        table.backgroundColor = UIColor.Background.primary
+        table.backgroundColor = UIColor.Background.primaryLight
         table.translatesAutoresizingMaskIntoConstraints = false
         table.clipsToBounds = false
         table.keyboardDismissMode = .onDrag
@@ -23,14 +23,20 @@ final class DefaultSettingsView: UIView, SettingsViewing {
         return table
     }()
     private let nameCell: BCTextFieldCell = BCTextFieldCell(
-        isFirstCell: true,
-        isLastCell: false,
-        placeholder: "Имя"
+        textField: ShadowTitlableTextField(
+            title: "Имя",
+            placeholder: "Иван",
+            textType: .name,
+            keyboardType: .default
+        )
     )
     private let lastnameCell: BCTextFieldCell = BCTextFieldCell(
-        isFirstCell: false,
-        isLastCell: true,
-        placeholder: "Фамилия"
+        textField: ShadowTitlableTextField(
+            title: "Фамилия",
+            placeholder: "Иванов",
+            textType: .familyName,
+            keyboardType: .default
+        )
     )
     private var switchCell: BCSwitchCell!
     private let saveButton: UIButton = {
@@ -40,7 +46,7 @@ final class DefaultSettingsView: UIView, SettingsViewing {
     }()
     private let footerView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 104))
-        view.backgroundColor = UIColor.Background.primary
+        view.backgroundColor = UIColor.Background.primaryLight
         return view
     }()
     
@@ -71,7 +77,7 @@ final class DefaultSettingsView: UIView, SettingsViewing {
                 self.controller.notificationsIsOnChanged(to: isOn)
         })
         
-        backgroundColor = UIColor.Background.primary
+        backgroundColor = UIColor.Background.primaryLight
         enableSaveButton(false)
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         
@@ -81,6 +87,7 @@ final class DefaultSettingsView: UIView, SettingsViewing {
         lastnameCell.delegate = self
         
         addSubview(tableView)
+        tableView.alwaysBounceVertical = false
         tableView.tableFooterView = footerView
         footerView.addSubview(saveButton)
         tableView.delegate = self

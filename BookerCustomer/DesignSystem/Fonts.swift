@@ -12,14 +12,14 @@ extension UIFont {
     
     struct Button {
         static let primary = UIFont.systemFont(ofSize: 14)
-        static let options = UIFont.systemFont(ofSize: 16)
+        static let options = UIFont.systemFont(ofSize: 16, weight: .bold)
         static let secondary = UIFont.systemFont(ofSize: 14)
     }
     
     struct Cell {
-        static let bigTitle = UIFont.systemFont(ofSize: 16, weight: .medium)
+        static let bigTitle = UIFont.systemFont(ofSize: 16, weight: .bold)
         static let title = UIFont.systemFont(ofSize: 16)
-        static let description = UIFont.systemFont(ofSize: 12)
+        static let description = UIFont.systemFont(ofSize: 14)
     }
     
     struct Alert {
@@ -29,9 +29,14 @@ extension UIFont {
     
     struct Label {
         static let forTextField = UIFont.systemFont(ofSize: 14)
+        static let help = UIFont.systemFont(ofSize: 16)
     }
     
     struct TextField {
         static let autorization = UIFont.systemFont(ofSize: 18, weight: .bold)
+    }
+    
+    struct NavigationBar {
+        static let title = UIFont.systemFont(ofSize: 20, weight: .heavy)
     }
 }

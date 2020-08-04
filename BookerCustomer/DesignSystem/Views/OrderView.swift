@@ -16,6 +16,8 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         case orderReady
     }
     
+    var onStateChange: ((State) -> ())?
+    
     // MARK: UI Elements
     private let helpingTfPicker = UITextField()
     private let datePicker: UIDatePicker = {
@@ -24,8 +26,6 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         picker.locale = Locale(identifier: "ru_RU")
         picker.minimumDate = Date(timeIntervalSinceNow: 20*60)
         picker.maximumDate = Date(timeIntervalSinceNow: 14 * 24*60*60)
-        picker.setValue(UIColor.Button.title, forKey: "textColor")
-        picker.setValue(false, forKey: "highlightsToday")
         return picker
     }()
     private let personsCountPicker: UIPickerView = {
@@ -34,14 +34,15 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }()
     private let dateButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitleColor(UIColor.Button.title, for: .normal)
+        button.setTitleColor(UIColor.Button.titleLight, for: .normal)
         button.contentHorizontalAlignment = .left
         button.titleLabel?.font = UIFont.Button.options
+        button.titleLabel?.numberOfLines = 0
         return button
     }()
     private let personsCountButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitleColor(UIColor.Button.title, for: .normal)
+        button.setTitleColor(UIColor.Button.titleLight, for: .normal)
         button.contentHorizontalAlignment = .right
         button.titleLabel?.font = UIFont.Button.options
         return button
@@ -60,6 +61,7 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     private let horizontalStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
+        stack.alignment = .center
         return stack
     }()
     private let verticalStack: UIStackView = {
@@ -70,19 +72,25 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }()
     
     // MARK: Logic vars
-    private var state: State
-    private var date: Date
+    private(set) var state: State
+    private var date: Date? {
+        didSet {
+            orderButton.isEnabled = date != nil
+        }
+    }
     private var personsCount: Int
     
     // MARK: Life Cycle
     init(
         state: State,
-        date: Date,
-        personsCount: Int
+        date: Date?,
+        personsCount: Int,
+        onStateChange: ((State) -> ())? = nil
     ) {
         self.state = state
         self.date = date
         self.personsCount = personsCount
+        self.onStateChange = onStateChange
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         setNeedsUpdateConstraints()
@@ -100,24 +108,39 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: Configuration
     private func configureView() {
+        setupShadow()
         personsCountPicker.dataSource = self
         personsCountPicker.delegate = self
         addSubview(verticalStack)
         addSubview(helpingTfPicker)
         verticalStack.translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 24
-        backgroundColor = UIColor.Background.secondary
+        backgroundColor = UIColor.Background.primaryLight
         horizontalStack.addArrangedSubview(dateButton)
         horizontalStack.addArrangedSubview(personsCountButton)
         verticalStack.addArrangedSubview(horizontalStack)
         verticalStack.addArrangedSubview(orderButton)
         verticalStack.addArrangedSubview(rejectOrderButton)
         verticalStack.setCustomSpacing(16, after: orderButton)
-        dateButton.setTitle(date.toString(), for: .normal)
+        let dateString = UIScreen.main.nativeBounds.height == 1136 ? date?.toStringIn2Lines() : date?.toString()
+        dateButton.setTitle(dateString ?? "Выбрать дату", for: .normal)
+        if state == .shouldOrder {
+            orderButton.isEnabled = date != nil
+        } else {
+            orderButton.isUserInteractionEnabled = false
+        }
+        
         personsCountButton.setTitle(personsString(from: personsCount), for: .normal)
         setState(to: state)
         dateButton.addTarget(self, action: #selector(dateButtonTapped), for: .touchUpInside)
         personsCountButton.addTarget(self, action: #selector(personCountButtonTapped), for: .touchUpInside)
+    }
+    
+    private func setupShadow() {
+        layer.shadowColor = UIColor.Shadow.main.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 8)
+        layer.shadowRadius = 30
+        layer.shadowOpacity = 0.1
     }
     
     private func setState(to state: State) {
@@ -134,17 +157,18 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
             rejectOrderButton.isHidden = false
             orderButton.setButtonState(to: .waiting)
             [dateButton, personsCountButton].forEach { (button) in
-                button.setTitleColor(UIColor.Button.title, for: .normal)
+                button.setTitleColor(UIColor.Button.titleDark, for: .normal)
                 button.isUserInteractionEnabled = false
             }
         case .orderReady:
             rejectOrderButton.isHidden = false
             orderButton.setButtonState(to: .ready)
             [dateButton, personsCountButton].forEach { (button) in
-                button.setTitleColor(UIColor.Button.title, for: .normal)
+                button.setTitleColor(UIColor.Button.titleDark, for: .normal)
                 button.isUserInteractionEnabled = false
             }
         }
+        onStateChange?(state)
     }
     
     // MARK: Constraints
@@ -162,7 +186,7 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     @objc private func dateButtonTapped() {
         helpingTfPicker.inputView = datePicker
         datePicker.backgroundColor = UIColor.Background.pickerView
-        datePicker.setDate(date, animated: false)
+        datePicker.setDate(date ?? datePicker.minimumDate!, animated: false)
         let toolbar = UIToolbar()
         toolbar.barTintColor = UIColor.Background.toolbar
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelDatePickerTapped))
@@ -181,7 +205,8 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @objc private func doneDatePickerTapped() {
         date = datePicker.date
-        dateButton.setTitle(date.toString(), for: .normal)
+        let dateString = UIScreen.main.nativeBounds.height == 1136 ? date?.toStringIn2Lines() : date?.toString()
+        dateButton.setTitle(dateString, for: .normal)
         helpingTfPicker.resignFirstResponder()
     }
     
@@ -238,7 +263,7 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let str = personsString(from: row + 1)
-        let attributedString = NSAttributedString(string: str, attributes: [NSAttributedString.Key.foregroundColor: UIColor.Button.title])
+        let attributedString = NSAttributedString(string: str, attributes: [NSAttributedString.Key.foregroundColor: UIColor.Button.titleDark])
         return attributedString
     }
     

@@ -11,11 +11,14 @@ import UIKit
 final class DefaultEnterNameController: UIViewController, EnterNameControlling {
     
     private var enterNameView: EnterNameViewing!
+    private var alertManager: AlertManager!
+    private let profileService = ProfileService()
     
     override func loadView() {
         super.loadView()
         enterNameView = DefaultEnterNameView(controller: self)
         enterNameView.configureView()
+        alertManager = AlertManager(vc: self)
         view = enterNameView
     }
     
@@ -25,6 +28,19 @@ final class DefaultEnterNameController: UIViewController, EnterNameControlling {
     }
     
     func nextButtonTapped(name: String, lastname: String?) {
-        print("Сохранить пользователя с именем \"\(name)\" и фамилией \"\(lastname ?? "[Нет фамилии]")\"")
+        profileService.setNewProfileInfo(name: name, lastname: lastname) { (error) in
+            if let error = error {
+                self.alertManager.showAlert(
+                    title: "Ошибка",
+                    message: error.localizedDescription,
+                    action: nil
+                )
+                return
+            }
+        }
+        let mainTabBar = BCTabBarController()
+        mainTabBar.modalPresentationStyle = .fullScreen
+        mainTabBar.modalTransitionStyle = .crossDissolve
+        self.present(mainTabBar, animated: true, completion: nil)
     }
 }

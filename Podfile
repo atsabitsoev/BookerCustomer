@@ -8,5 +8,8 @@ target 'Booker' do
   # Pods for Booker
   pod 'SDWebImage', '~> 5.0'
   pod 'PhoneNumberKit', '~> 3.1'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
 end

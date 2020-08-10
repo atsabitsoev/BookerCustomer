@@ -14,8 +14,6 @@ protocol SettingsViewing: UIView {
 }
 
 protocol SettingsControlling: UIViewController {
-    func nameChanged(to newName: String)
-    func lastnameChanged(to newLastname: String)
     func notificationsIsOnChanged(to newValue: Bool)
-    func saveButtonTapped()
+    func saveButtonTapped(name: String?, lastname: String?)
 }

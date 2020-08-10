@@ -23,7 +23,7 @@ final class DefaultSettingsController: UIViewController, SettingsControlling {
         let nameAndLastname = profileService.getNameAndLastname()
         let name = nameAndLastname.0
         let lastname = nameAndLastname.1
-        let notificationsIsOn = settingsService.notificationsIsOn
+        notificationsIsOn = settingsService.notificationsIsOn
         settingsView.configureView(name: name, lastname: lastname, notificationsOn: notificationsIsOn)
         view = settingsView
     }

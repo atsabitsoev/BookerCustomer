@@ -21,8 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             
         } else {
+            let currentUser = Auth.auth().currentUser
+            currentUser?.reload()
+            let userLoggedIn = currentUser != nil
             window = UIWindow(frame: UIScreen.main.bounds)
-            let userLoggedIn = Auth.auth().currentUser != nil
             let rootViewController = userLoggedIn ? BCTabBarController() : BCNavigationController(rootViewController: DefaultEnterPhoneController())
             window?.rootViewController = rootViewController
             window?.makeKeyAndVisible()

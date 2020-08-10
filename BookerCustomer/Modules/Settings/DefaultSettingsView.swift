@@ -151,6 +151,7 @@ extension DefaultSettingsView: UITableViewDelegate, UITableViewDataSource {
 extension DefaultSettingsView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        enableSaveButton(true)
         endEditing(true)
         return true
     }

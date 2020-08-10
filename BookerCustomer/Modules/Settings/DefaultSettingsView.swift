@@ -115,7 +115,10 @@ final class DefaultSettingsView: UIView, SettingsViewing {
     }
     
     @objc private func saveButtonTapped() {
-        controller.saveButtonTapped()
+        controller.saveButtonTapped(
+            name: nameCell.textField.text,
+            lastname: lastnameCell.textField.text
+        )
     }
     
     @objc private func viewTapped() {
@@ -150,14 +153,5 @@ extension DefaultSettingsView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         endEditing(true)
         return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        if textField.tag == 0 {
-            controller.nameChanged(to: text)
-        } else if textField.tag == 1 {
-            controller.lastnameChanged(to: text)
-        }
     }
 }

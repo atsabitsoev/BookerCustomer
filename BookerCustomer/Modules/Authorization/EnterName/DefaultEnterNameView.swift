@@ -73,6 +73,7 @@ final class DefaultEnterNameView: UIView, EnterNameViewing {
         verticalStack.addArrangedSubview(lastnameTextField)
         addSubview(nextButton)
         setNeedsUpdateConstraints()
+        _ = nameTextField.becomeFirstResponder()
     }
     
     private func setupVerticalStackConstraints() {

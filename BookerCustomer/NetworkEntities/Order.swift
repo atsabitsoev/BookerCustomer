@@ -9,8 +9,14 @@
 import Foundation
 
 struct Order {
+    
+    enum State: String {
+        case waiting
+        case ready
+    }
+    
     var date: Date
     var personsCount: Int
-    var state: String
+    var state: State
     var orderId: String
 }

@@ -18,7 +18,11 @@ final class DefaultHomeView: UIView, HomeViewing {
             state: startState,
             date: nil,
             personsCount: 1,
-            onStateChange: self.onStateChange(state:))
+            onStateChange: self.onStateChange(state:),
+            onRejectTapped: self.onRejectTapped,
+            onCreateOrderTapped: self.onCreateOrderTapped(date:personsCount:))
+        view.alpha = 0.5
+        view.isUserInteractionEnabled = false
         return view
     }()
     private let helpImageView: UIImageView = {
@@ -67,6 +71,12 @@ final class DefaultHomeView: UIView, HomeViewing {
         setNeedsUpdateConstraints()
     }
     
+    func showOrderView(state: OrderView.State, personsCount: Int, date: Date?) {
+        orderView.setConfiguration(state: state, personsCount: personsCount, date: date)
+        orderView.alpha = 1
+        orderView.isUserInteractionEnabled = true
+    }
+    
     private func onStateChange(state: OrderView.State) {
         switch state {
         case .shouldOrder:
@@ -77,8 +87,21 @@ final class DefaultHomeView: UIView, HomeViewing {
             helpLabel.text = "Скоро мы вам ответим"
         case .orderReady:
             helpImageView.image = UIImage(named: "congratulations")!
-            helpLabel.text = "Ура! Ожидаем вас сегодня, в 19:00\nпо адресу: Ленина, 42!"
+            let settingsService = SettingsService()
+            if let date = orderView.date,
+                let restaurantName = settingsService.restaurantName,
+                let address = settingsService.restaurantAddress {
+                helpLabel.text = "Ура! Ожидаем вас \(date.toString())\nпо адресу: \(address) в заведении: \(restaurantName)!"
+            }
         }
+    }
+    
+    private func onCreateOrderTapped(date: Date, personsCount: Int) {
+        controller.alertCreateOrder(withDate: date, personsCount: personsCount)
+    }
+    
+    private func onRejectTapped() {
+        controller.alertRejectOrder()
     }
     
     private func setupOrderViewConstraints() {

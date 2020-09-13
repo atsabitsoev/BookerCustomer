@@ -32,6 +32,7 @@
 		AC2FFE4224C4994D003EF12C /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2FFE4124C4994D003EF12C /* HomeProtocols.swift */; };
 		AC3A25B3250E61E000106247 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A25B2250E61E000106247 /* OrderService.swift */; };
 		AC3A25B6250E62A900106247 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A25B5250E62A900106247 /* Order.swift */; };
+		AC3A25B8250E891400106247 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A25B7250E891400106247 /* RestaurantService.swift */; };
 		AC45994B24CD32A9005871BF /* DefaultSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45994A24CD32A9005871BF /* DefaultSettingsController.swift */; };
 		AC45994D24CD3301005871BF /* DefaultSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45994C24CD3301005871BF /* DefaultSettingsView.swift */; };
 		AC45994F24CD335E005871BF /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45994E24CD335E005871BF /* SettingsProtocols.swift */; };
@@ -89,6 +90,7 @@
 		AC2FFE4124C4994D003EF12C /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		AC3A25B2250E61E000106247 /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 		AC3A25B5250E62A900106247 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		AC3A25B7250E891400106247 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
 		AC45994A24CD32A9005871BF /* DefaultSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingsController.swift; sourceTree = "<group>"; };
 		AC45994C24CD3301005871BF /* DefaultSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingsView.swift; sourceTree = "<group>"; };
 		AC45994E24CD335E005871BF /* SettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				AC73336D24E0E8E70017D436 /* AuthService.swift */,
 				ACF2BEE324E10FFD00BE3D9B /* ProfileService.swift */,
+				AC3A25B7250E891400106247 /* RestaurantService.swift */,
 				AC3A25B2250E61E000106247 /* OrderService.swift */,
 			);
 			path = ServicesAPI;
@@ -504,6 +507,7 @@
 				AC0D0AF824CD2E4900D75F29 /* DiscountItem.swift in Sources */,
 				AC3A25B3250E61E000106247 /* OrderService.swift in Sources */,
 				AC2EAB0E24D0BB3C00E8B0F3 /* DefaultEnterPhoneView.swift in Sources */,
+				AC3A25B8250E891400106247 /* RestaurantService.swift in Sources */,
 				AC3A25B6250E62A900106247 /* Order.swift in Sources */,
 				AC26A3E524CC6CF900B37536 /* DefaultPromotionsView.swift in Sources */,
 				AC505FC024D116D400D8A5B8 /* AlertManager.swift in Sources */,

@@ -11,6 +11,10 @@ import UIKit
 final class DefaultHomeController: UIViewController, HomeControlling {
     
     private var homeView: HomeViewing!
+    private let orderService = OrderService()
+    private lazy var alertManager = AlertManager(vc: self)
+    
+    private var currrentOrder: Order?
     
     override func loadView() {
         super.loadView()
@@ -19,4 +23,22 @@ final class DefaultHomeController: UIViewController, HomeControlling {
         homeView.configureView()
         self.view = homeView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fetchCurrentOrder()
+    }
+    
+    private func fetchCurrentOrder() {
+        orderService.getCurrentOrderIfExist { [weak self] (order, error) in
+            if let order = order {
+                self?.currrentOrder = order
+            } else if let error = error {
+                self?.alertManager.showAlert(title: "Ошибка", message: error, action: nil)
+            }
+        }
+    }
+    
+    
 }

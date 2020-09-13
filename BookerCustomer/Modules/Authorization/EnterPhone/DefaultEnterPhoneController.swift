@@ -13,6 +13,7 @@ final class DefaultEnterPhoneController: UIViewController, EnterPhoneController 
     private var enterPhoneView: EnterPhoneView!
     private var alertManager: AlertManager!
     private var authService = AuthService()
+    private var settingsService = SettingsService()
         
     override func loadView() {
         super.loadView()
@@ -29,7 +30,6 @@ final class DefaultEnterPhoneController: UIViewController, EnterPhoneController 
     
     func sendCodeButtonTapped(phoneNumber: String?) {
         if let phoneNumber = phoneNumber {
-            print(phoneNumber)
             authService.sendCode(toPhone: "+" + phoneNumber) { (verificationId, error) in
                 guard let _ = verificationId else {
                     self.alertManager.showAlert(
@@ -40,6 +40,7 @@ final class DefaultEnterPhoneController: UIViewController, EnterPhoneController 
                     return
                 }
                 self.enterPhoneView.showSmsTextField(true)
+                self.settingsService.userPhone = phoneNumber
             }
         } else {
             alertManager.showAlert(title: "Ошибка", message: "Введен неверный номер телефона", action: nil)

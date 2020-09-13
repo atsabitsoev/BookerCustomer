@@ -17,6 +17,8 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     var onStateChange: ((State) -> ())?
+    var onRejectTapped: (() -> ())?
+    var onCreateOrderTapped: ((Date, Int) -> ())?
     
     // MARK: UI Elements
     private let helpingTfPicker = UITextField()
@@ -73,7 +75,7 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: Logic vars
     private(set) var state: State
-    private var date: Date? {
+    private(set) var date: Date? {
         didSet {
             orderButton.isEnabled = date != nil
         }
@@ -85,12 +87,16 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         state: State,
         date: Date?,
         personsCount: Int,
-        onStateChange: ((State) -> ())? = nil
+        onStateChange: ((State) -> ())? = nil,
+        onRejectTapped: (() -> ())? = nil,
+        onCreateOrderTapped: ((Date, Int) -> ())? = nil
     ) {
         self.state = state
         self.date = date
         self.personsCount = personsCount
         self.onStateChange = onStateChange
+        self.onRejectTapped = onRejectTapped
+        self.onCreateOrderTapped = onCreateOrderTapped
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         setNeedsUpdateConstraints()
@@ -104,6 +110,24 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     override func updateConstraints() {
         setConstraintsVerticalStack()
         super.updateConstraints()
+    }
+    
+    func setConfiguration(state: State,
+                          personsCount: Int,
+                          date: Date?) {
+        self.state = state
+        self.date = date
+        self.personsCount = personsCount
+        let dateString = UIScreen.main.nativeBounds.height == 1136 ? date?.toStringIn2Lines() : date?.toString()
+        dateButton.setTitle(dateString ?? "Выбрать дату", for: .normal)
+        if state == .shouldOrder {
+            orderButton.isEnabled = date != nil
+        } else {
+            orderButton.isUserInteractionEnabled = false
+        }
+        
+        personsCountButton.setTitle(personsString(from: personsCount), for: .normal)
+        setState(to: state)
     }
     
     // MARK: Configuration
@@ -134,6 +158,8 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         setState(to: state)
         dateButton.addTarget(self, action: #selector(dateButtonTapped), for: .touchUpInside)
         personsCountButton.addTarget(self, action: #selector(personCountButtonTapped), for: .touchUpInside)
+        rejectOrderButton.addTarget(self, action: #selector(rejectButtonTapped), for: .touchUpInside)
+        orderButton.addTarget(self, action: #selector(orderButtonTapped), for: .touchUpInside)
     }
     
     private func setupShadow() {
@@ -180,6 +206,16 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
             verticalStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             orderButton.heightAnchor.constraint(equalToConstant: 48)
         ])
+    }
+    
+    @objc private func rejectButtonTapped() {
+        onRejectTapped?()
+    }
+    
+    @objc private func orderButtonTapped() {
+        guard let date = self.date else { return }
+        self.endEditing(true)
+        onCreateOrderTapped?(date, personsCount)
     }
     
     // MARK: Pickers

@@ -11,7 +11,10 @@ import UIKit
 
 protocol HomeViewing: UIView {
     func configureView()
+    func showOrderView(state: OrderView.State, personsCount: Int, date: Date?)
 }
 
 protocol HomeControlling: UIViewController {
+    func alertCreateOrder(withDate date: Date, personsCount: Int)
+    func alertRejectOrder()
 }

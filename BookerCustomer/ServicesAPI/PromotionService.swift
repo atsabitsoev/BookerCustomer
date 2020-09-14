@@ -15,23 +15,27 @@ final class PromotionService {
         let db = Firestore.firestore()
         let restaurantId = SettingsService().restaurantId
         
-        db.collection("restaurants").document(restaurantId).getDocument { (document, error) in
-            if let documentData = document?.data() {
-                let promotionsDict = (documentData["promotions"] as? [[String: Any]]) ?? []
-                let promotions = promotionsDict.compactMap { (promotionDict) -> Promotion? in
-                    if let title = promotionDict["title"] as? String,
-                        let description = promotionDict["description"] as? String,
-                        let image = promotionDict["image"] as? String {
-                        let promotion = Promotion(title: title, description: description, image: image)
-                        return promotion
-                    } else {
-                        return nil
-                    }
-                }
-                handler(promotions, nil)
-            } else {
+        db.collection("restaurants").document(restaurantId).collection("promotions").addSnapshotListener { (query, error) in
+            
+            let promotionsDictOptional = query?.documents.map({ (document) -> [String: Any] in
+                return document.data()
+            })
+            guard let promotionsDict = promotionsDictOptional else {
                 handler(nil, error?.localizedDescription ?? "Что-то пошло не так...")
+                return
             }
+            
+            let promotions = promotionsDict.compactMap { (promotionDict) -> Promotion? in
+                if let title = promotionDict["title"] as? String,
+                    let description = promotionDict["description"] as? String,
+                    let image = promotionDict["image"] as? String {
+                    let promotion = Promotion(title: title, description: description, image: image)
+                    return promotion
+                } else {
+                    return nil
+                }
+            }
+            handler(promotions, nil)
         }
     }
 }

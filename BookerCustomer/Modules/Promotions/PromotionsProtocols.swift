@@ -11,6 +11,7 @@ import UIKit
 
 protocol PromotionsViewing: UIView {
     func configureView()
+    func setPromotionItems(_ items: [PromotionItem])
 }
 
 protocol PromotionsControlling: UIViewController {

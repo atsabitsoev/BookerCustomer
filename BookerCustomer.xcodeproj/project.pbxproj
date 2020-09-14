@@ -52,6 +52,8 @@
 		AC82C4B524D2918600250D4C /* EnterNameProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82C4B424D2918600250D4C /* EnterNameProtocols.swift */; };
 		AC8386DD24C8AF9D002F0BF7 /* PromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */; };
 		AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84D18E24C8950400D2ED75 /* DiscountCell.swift */; };
+		ACA4BFF8250F91C5004B4254 /* PromotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4BFF7250F91C5004B4254 /* PromotionService.swift */; };
+		ACA4BFFA250F91F1004B4254 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4BFF9250F91F1004B4254 /* Promotion.swift */; };
 		ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8819424CB2B040013A01D /* SimpleAlertController.swift */; };
 		ACCCCDF424E11B120092E111 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCCDF324E11B120092E111 /* SettingsService.swift */; };
 		ACEDCA0524CB158F00790186 /* BCTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */; };
@@ -110,6 +112,8 @@
 		AC82C4B424D2918600250D4C /* EnterNameProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameProtocols.swift; sourceTree = "<group>"; };
 		AC8386DC24C8AF9D002F0BF7 /* PromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCell.swift; sourceTree = "<group>"; };
 		AC84D18E24C8950400D2ED75 /* DiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCell.swift; sourceTree = "<group>"; };
+		ACA4BFF7250F91C5004B4254 /* PromotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionService.swift; sourceTree = "<group>"; };
+		ACA4BFF9250F91F1004B4254 /* Promotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		ACACEC6A24D4E74500BBFBDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ACC8819424CB2B040013A01D /* SimpleAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertController.swift; sourceTree = "<group>"; };
 		ACCCCDF324E11B120092E111 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				AC3A25B5250E62A900106247 /* Order.swift */,
+				ACA4BFF9250F91F1004B4254 /* Promotion.swift */,
 			);
 			path = NetworkEntities;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				ACF2BEE324E10FFD00BE3D9B /* ProfileService.swift */,
 				AC3A25B7250E891400106247 /* RestaurantService.swift */,
 				AC3A25B2250E61E000106247 /* OrderService.swift */,
+				ACA4BFF7250F91C5004B4254 /* PromotionService.swift */,
 			);
 			path = ServicesAPI;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				AC26A3E524CC6CF900B37536 /* DefaultPromotionsView.swift in Sources */,
 				AC505FC024D116D400D8A5B8 /* AlertManager.swift in Sources */,
 				AC505FBD24D1119C00D8A5B8 /* String+Extensions.swift in Sources */,
+				ACA4BFFA250F91F1004B4254 /* Promotion.swift in Sources */,
 				AC82C4B124D2914700250D4C /* DefaultEnterNameController.swift in Sources */,
 				AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */,
 				AC45994D24CD3301005871BF /* DefaultSettingsView.swift in Sources */,
@@ -524,6 +531,7 @@
 				AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */,
 				ACCCCDF424E11B120092E111 /* SettingsService.swift in Sources */,
 				AC45994F24CD335E005871BF /* SettingsProtocols.swift in Sources */,
+				ACA4BFF8250F91C5004B4254 /* PromotionService.swift in Sources */,
 				AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */,
 				AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */,
 				AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */,

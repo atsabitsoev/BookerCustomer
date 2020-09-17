@@ -6,28 +6,52 @@
 //  Copyright © 2020 Ацамаз Бицоев. All rights reserved.
 //
 
-import FirebaseAuth
+import FirebaseFirestore
 
 final class ProfileService {
     
     func setNewProfileInfo(
         name: String?,
         lastname: String?,
-        handler: ((Error?) -> Void)? = nil
+        _ handler: ((Bool, String?, String?) -> Void)? = nil
     ) {
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        let space = (name != nil && lastname != nil) ? " " : ""
-        let name = name ?? ""
-        let lastname = lastname ?? ""
-        changeRequest?.displayName = name + space + lastname
-        changeRequest?.commitChanges(completion: { (error) in
-            handler?(error)
-        })
+        guard let phone = SettingsService().userPhone,
+            let name = name,
+            let lastname = lastname else {
+                
+            handler?(false, nil, "Номер телефона не получен")
+            return
+        }
+        if let _ = SettingsService().userEntityId {
+            AuthService().updateUserEntity(name: name, lastname: lastname) { (succeed, errorString) in
+                handler?(true, nil, nil)
+            }
+        } else {
+            AuthService().createUserEntity(phone: phone, name: name, lastname: lastname) { (userId, errorString) in
+                handler?(true, userId, errorString)
+            }
+        }
+        
     }
     
-    func getNameAndLastname() -> (String, String) {
-        let displayName = Auth.auth().currentUser?.displayName ?? ""
-        let nameAndLastnameArray = displayName.components(separatedBy: " ")
-        return (nameAndLastnameArray[0], nameAndLastnameArray[1])
+    func getNameAndLastname(_ handler: @escaping (String?, String?, String?) -> ()) { // String, String, String == name, lastname, errorString
+        guard let userId = SettingsService().userEntityId else {
+            handler(nil, nil, "Пользователь не найден")
+            return
+        }
+        let db = Firestore.firestore()
+        db.collection("users").document(userId).getDocument { (document, error) in
+            guard let document = document, document.exists else {
+                handler(nil, nil, "Пользователь не найден")
+                return
+            }
+            let name = document.data()?["name"] as? String
+            let lastname = document.data()?["lastname"] as? String
+            if let error = error {
+                handler(nil, nil, error.localizedDescription)
+            } else {
+                handler(name, lastname, nil)
+            }
+        }
     }
 }

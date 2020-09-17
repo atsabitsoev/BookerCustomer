@@ -9,6 +9,7 @@
 import UIKit
 
 protocol SettingsViewing: UIView {
+    func setupView()
     func configureView(name: String, lastname: String, notificationsOn: Bool)
     func enableSaveButton(_ enable: Bool)
 }

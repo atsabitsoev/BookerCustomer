@@ -86,4 +86,10 @@ final class SettingsService {
         updateUserValues()
     }
     
+    func clearAll() {
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+    }
+    
 }

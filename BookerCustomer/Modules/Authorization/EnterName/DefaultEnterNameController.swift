@@ -28,15 +28,16 @@ final class DefaultEnterNameController: UIViewController, EnterNameControlling {
     }
     
     func nextButtonTapped(name: String, lastname: String?) {
-        profileService.setNewProfileInfo(name: name, lastname: lastname) { (error) in
-            if let error = error {
-                self.alertManager.showAlert(
+        profileService.setNewProfileInfo(name: name, lastname: lastname) { [weak self] (_, userId, errorString) in
+            guard let userId = userId else {
+                self?.alertManager.showAlert(
                     title: "Ошибка",
-                    message: error.localizedDescription,
+                    message: errorString ?? "Что-то пошло не так...",
                     action: nil
                 )
                 return
             }
+            SettingsService().userEntityId = userId
         }
         let mainTabBar = BCTabBarController()
         mainTabBar.modalPresentationStyle = .fullScreen

@@ -20,11 +20,7 @@ final class DefaultSettingsController: UIViewController, SettingsControlling {
     override func loadView() {
         super.loadView()
         settingsView = DefaultSettingsView(controller: self)
-        let nameAndLastname = profileService.getNameAndLastname()
-        let name = nameAndLastname.0
-        let lastname = nameAndLastname.1
-        notificationsIsOn = settingsService.notificationsIsOn
-        settingsView.configureView(name: name, lastname: lastname, notificationsOn: notificationsIsOn)
+        settingsView.setupView()
         view = settingsView
     }
     
@@ -32,6 +28,9 @@ final class DefaultSettingsController: UIViewController, SettingsControlling {
         super.viewDidLoad()
         title = "Настройки"
         alertManager = AlertManager(vc: self)
+        configureView()
+        setupNavigationBar()
+        notificationsIsOn = settingsService.notificationsIsOn
     }
     
     func notificationsIsOnChanged(to newValue: Bool) {
@@ -53,16 +52,58 @@ final class DefaultSettingsController: UIViewController, SettingsControlling {
                 )
                 return
         }
-        profileService.setNewProfileInfo(name: name, lastname: lastname) { (error) in
-            if let error = error {
-                self.alertManager.showAlert(
+        profileService.setNewProfileInfo(name: name, lastname: lastname) { [weak self] (succeed, userId, errorString) in
+            guard succeed else {
+                self?.alertManager.showAlert(
                     title: "Ошибка",
-                    message: error.localizedDescription,
+                    message: errorString ?? "Что-то пошло не так...",
                     action: nil
                 )
                 return
             }
         }
         settingsView.enableSaveButton(false)
+    }
+    
+    func quitButtonTapped() {
+        alertQuit()
+    }
+    
+    private func setupNavigationBar() {
+        let barQuitItem = UIBarButtonItem(image: UIImage(named: "exit"), style: .plain, target: self, action: #selector(alertQuit))
+        self.navigationItem.rightBarButtonItem = barQuitItem
+    }
+    
+    private func configureView() {
+        profileService.getNameAndLastname { [weak self] (name, lastname, errorString) in
+            guard let self = self else { return }
+            if let errorString = errorString {
+                self.alertManager.showAlert(title: "Ошибка", message: errorString, action: nil)
+            }
+            let name = name ?? ""
+            let lastname = lastname ?? ""
+            self.settingsView.configureView(name: name, lastname: lastname, notificationsOn: self.notificationsIsOn)
+
+        }
+    }
+    
+    @objc private func alertQuit() {
+        let alert = UIAlertController(title: "Выйти?", message: "Вы уверены, что хотите выйти из своего аккаунта?", preferredStyle: .actionSheet)
+        let quitAction = UIAlertAction(title: "Выйти", style: .destructive) { (_) in
+            self.quit()
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        alert.addAction(quitAction)
+        alert.addAction(cancelAction)
+        self.tabBarController?.present(alert, animated: true, completion: nil)
+    }
+    
+    private func quit() {
+        do {
+            try AuthService().logout()
+        } catch {
+            return
+        }
+        SettingsService().clearAll()
     }
 }

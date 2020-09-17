@@ -25,6 +25,7 @@ final class DiscountsBackendService {
             .collection("discounts")
             .addSnapshotListener { (query, error) in
                 
+                print(userId)
             guard let documents = query?.documents else {
                 handler(nil, error?.localizedDescription ?? "Что-то пошло не так...")
                 return

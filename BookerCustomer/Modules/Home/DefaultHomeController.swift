@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class DefaultHomeController: UIViewController, HomeControlling {
     
@@ -41,7 +42,6 @@ final class DefaultHomeController: UIViewController, HomeControlling {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchCurrentOrder()
         NotificationCenter.default.addObserver(self, selector: #selector(viewEnteredForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }

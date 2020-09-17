@@ -12,6 +12,8 @@ final class DefaultSettingsView: UIView, SettingsViewing {
     
     private var controller: SettingsControlling
     
+    private var viewConfigured: Bool = false
+    
     private let tableView: UITableView = {
         let table = UITableView()
         table.separatorStyle = .none
@@ -60,18 +62,7 @@ final class DefaultSettingsView: UIView, SettingsViewing {
         super.updateConstraints()
     }
     
-    func configureView(name: String, lastname: String, notificationsOn: Bool) {
-        nameCell.configureCell(with: name)
-        lastnameCell.configureCell(with: lastname)
-        let switchTitle = "Уведомления об акциях"
-        switchCell = BCSwitchCell(
-            titleOn: switchTitle,
-            titleOff: switchTitle,
-            isOn: notificationsOn,
-            action: { (isOn) in
-                self.controller.notificationsIsOnChanged(to: isOn)
-        })
-        
+    func setupView() {
         backgroundColor = UIColor.Background.primaryLight
         enableSaveButton(false)
         addSubview(saveButton)
@@ -88,8 +79,22 @@ final class DefaultSettingsView: UIView, SettingsViewing {
         tableView.dataSource = self
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         addGestureRecognizer(recognizer)
-        
         setNeedsUpdateConstraints()
+    }
+    
+    func configureView(name: String, lastname: String, notificationsOn: Bool) {
+        nameCell.configureCell(with: name)
+        lastnameCell.configureCell(with: lastname)
+        let switchTitle = "Уведомления об акциях"
+        switchCell = BCSwitchCell(
+            titleOn: switchTitle,
+            titleOff: switchTitle,
+            isOn: notificationsOn,
+            action: { (isOn) in
+                self.controller.notificationsIsOnChanged(to: isOn)
+        })
+        viewConfigured = true
+        tableView.reloadData()
     }
     
     func enableSaveButton(_ enable: Bool) {
@@ -130,7 +135,7 @@ final class DefaultSettingsView: UIView, SettingsViewing {
 extension DefaultSettingsView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewConfigured ? 3 : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

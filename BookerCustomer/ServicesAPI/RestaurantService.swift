@@ -16,7 +16,7 @@ final class RestaurantService {
         let settingsService = SettingsService()
         let db = Firestore.firestore()
         let restaurantId = settingsService.restaurantId
-        db.collection("restaurants").document(restaurantId).getDocument { (document, error) in
+        db.collection("restaurants").document(restaurantId).addSnapshotListener { (document, error) in
             if let document = document,
                 let documentDict = document.data() {
                 let restaurantName = documentDict["name"] as? String

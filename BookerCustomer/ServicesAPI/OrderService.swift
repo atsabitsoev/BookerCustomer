@@ -31,7 +31,7 @@ final class OrderService {
                     handler(nil, error?.localizedDescription ?? "Что-то пошло не так...")
                     return
                 }
-                if let orderDocument = documents.first {
+                if let orderDocument = documents.first, orderDocument.exists {
                     let order = self?.parseJsonToOrder(orderDocument.data(), orderId: orderDocument.documentID)
                     handler(order, nil)
                 } else {
@@ -53,30 +53,36 @@ final class OrderService {
             return
         }
         let profileService = ProfileService()
-        let nameAndLastname = profileService.getNameAndLastname()
-        let name = nameAndLastname.0
-        let lastname = nameAndLastname.1
-        let nameAndLastnameString = "\(name) \(lastname)"
-        
-        let orderDict: [String: Any] = [
-            "customerName": nameAndLastnameString,
-            "personNumber": personNumber,
-            "phone": userPhone,
-            "status": "waiting",
-            "dateTime": Timestamp(date: date)
-        ]
-        
-        db
-            .collection("restaurants")
-            .document(restaurantId)
-            .collection("orders")
-            .addDocument(data: orderDict) { (error) in
-                if let error = error {
-                    handler(false, error.localizedDescription)
-                } else {
-                    handler(true, nil)
-                }
+        profileService.getNameAndLastname { (name, lastname, errorString) in
+            if let errorString = errorString {
+                handler(false, errorString)
+                return
+            }
+            let name = name ?? ""
+            let lastname = lastname ?? ""
+            let nameAndLastnameString = "\(name) \(lastname)"
+            
+            let orderDict: [String: Any] = [
+                "customerName": nameAndLastnameString,
+                "personNumber": personNumber,
+                "phone": userPhone,
+                "status": "waiting",
+                "dateTime": Timestamp(date: date)
+            ]
+            
+            db
+                .collection("restaurants")
+                .document(restaurantId)
+                .collection("orders")
+                .addDocument(data: orderDict) { (error) in
+                    if let error = error {
+                        handler(false, error.localizedDescription)
+                    } else {
+                        handler(true, nil)
+                    }
+            }
         }
+        
     }
     
     func deleteOrder(_ handler: @escaping (Bool, String?) -> ()) {
@@ -111,7 +117,8 @@ final class OrderService {
         
         db
             .collection("users")
-            .whereField("phone", isEqualTo: userPhone).getDocuments { (query, error) in
+            .whereField("phone", isEqualTo: userPhone)
+            .addSnapshotListener { (query, error) in
                 
                 if let userDocument = query?.documents.first {
                     let userData = userDocument.data()

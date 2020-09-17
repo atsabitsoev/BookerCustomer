@@ -12,9 +12,7 @@ final class DefaultDiscountsView: UIView, DiscountsViewing {
     
     private var controller: DiscountsControlling
     
-    fileprivate var discountItems: [DiscountItem] = [
-        DiscountItem(name: "Скидка номер раз"),
-        DiscountItem(name: "Скидка номер 2")]
+    fileprivate var discountItems: [DiscountItem] = []
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -48,6 +46,11 @@ final class DefaultDiscountsView: UIView, DiscountsViewing {
         setNeedsUpdateConstraints()
     }
     
+    func setDiscountItems(_ items: [DiscountItem]) {
+        self.discountItems = items
+        tableView.reloadData()
+    }
+    
     private func setupTableViewConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -70,6 +73,12 @@ extension DefaultDiscountsView: UITableViewDelegate, UITableViewDataSource {
         let currentItem = discountItems[indexPath.row]
         cell.configureCell(title: currentItem.name)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let currentDiscountId = discountItems[indexPath.row].id
+        controller.showQrCode(discountId: currentDiscountId)
     }
     
 }

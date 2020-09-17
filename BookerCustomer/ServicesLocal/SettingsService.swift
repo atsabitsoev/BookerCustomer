@@ -19,6 +19,16 @@ final class SettingsService {
         }
     }
     
+    var userEntityId: String? {
+        get {
+            return UserDefaults.standard.string(forKey: "userEntityId")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userEntityId")
+        }
+    }
+    
+    
     var notificationsIsOn: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "notificationsIsOn")
@@ -52,13 +62,28 @@ final class SettingsService {
         }
     }
     
-    func updateValues() {
+    private func updateRestaurantValues() {
         RestaurantService().getRestaurantInfo { (name, address, error) in
             if error == nil {
                 self.restaurantName = name
                 self.restaurantAddress = address
             }
         }
+    }
+    
+    private func updateUserValues() {
+        AuthService().getUserEntityId { (userEntityId, errorString) in
+            guard let userEntityId = userEntityId else {
+                print(errorString ?? "Неизвестная ошибка при попытке получить userEntityId")
+                return
+            }
+            self.userEntityId = userEntityId
+        }
+    }
+    
+    func updateValues() {
+        updateRestaurantValues()
+        updateUserValues()
     }
     
 }

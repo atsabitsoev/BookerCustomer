@@ -55,9 +55,15 @@
 		ACA4BFF8250F91C5004B4254 /* PromotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4BFF7250F91C5004B4254 /* PromotionService.swift */; };
 		ACA4BFFA250F91F1004B4254 /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4BFF9250F91F1004B4254 /* Promotion.swift */; };
 		ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8819424CB2B040013A01D /* SimpleAlertController.swift */; };
+		ACC9113B2512D07900E47A1F /* DiscountsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC9113A2512D07900E47A1F /* DiscountsService.swift */; };
+		ACC9113D2512D0C100E47A1F /* Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC9113C2512D0C100E47A1F /* Discount.swift */; };
+		ACC911412512D72400E47A1F /* DefaultDiscountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC911402512D72400E47A1F /* DefaultDiscountController.swift */; };
+		ACC911432512D73800E47A1F /* DefaultDiscountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC911422512D73800E47A1F /* DefaultDiscountView.swift */; };
+		ACC911452512D74B00E47A1F /* DiscountProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC911442512D74B00E47A1F /* DiscountProtocols.swift */; };
 		ACCCCDF424E11B120092E111 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCCDF324E11B120092E111 /* SettingsService.swift */; };
 		ACEDCA0524CB158F00790186 /* BCTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */; };
 		ACF2BEE424E10FFD00BE3D9B /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BEE324E10FFD00BE3D9B /* ProfileService.swift */; };
+		ACF3EC822512DCC300E2D0AA /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3EC812512DCC300E2D0AA /* ScannerViewController.swift */; };
 		ACF5324A24CB9D3C00E832AC /* BCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5324924CB9D3C00E832AC /* BCNavigationController.swift */; };
 		ACF5324C24CB9F9000E832AC /* BCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5324B24CB9F9000E832AC /* BCTabBarController.swift */; };
 /* End PBXBuildFile section */
@@ -116,9 +122,15 @@
 		ACA4BFF9250F91F1004B4254 /* Promotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		ACACEC6A24D4E74500BBFBDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ACC8819424CB2B040013A01D /* SimpleAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertController.swift; sourceTree = "<group>"; };
+		ACC9113A2512D07900E47A1F /* DiscountsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountsService.swift; sourceTree = "<group>"; };
+		ACC9113C2512D0C100E47A1F /* Discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discount.swift; sourceTree = "<group>"; };
+		ACC911402512D72400E47A1F /* DefaultDiscountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiscountController.swift; sourceTree = "<group>"; };
+		ACC911422512D73800E47A1F /* DefaultDiscountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiscountView.swift; sourceTree = "<group>"; };
+		ACC911442512D74B00E47A1F /* DiscountProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountProtocols.swift; sourceTree = "<group>"; };
 		ACCCCDF324E11B120092E111 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		ACEDCA0424CB158F00790186 /* BCTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCTextFieldCell.swift; sourceTree = "<group>"; };
 		ACF2BEE324E10FFD00BE3D9B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		ACF3EC812512DCC300E2D0AA /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		ACF5324924CB9D3C00E832AC /* BCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCNavigationController.swift; sourceTree = "<group>"; };
 		ACF5324B24CB9F9000E832AC /* BCTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCTabBarController.swift; sourceTree = "<group>"; };
 		CE1BB9B19030D0374652F938 /* Pods-Booker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booker.release.xcconfig"; path = "Target Support Files/Pods-Booker/Pods-Booker.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,10 +168,9 @@
 		AC0D0AF024CD2A6200D75F29 /* Discounts */ = {
 			isa = PBXGroup;
 			children = (
-				AC0D0AF124CD2A7D00D75F29 /* DefaultDiscountsController.swift */,
-				AC0D0AF324CD2AA800D75F29 /* DefaultDiscountsView.swift */,
-				AC0D0AF724CD2E4900D75F29 /* DiscountItem.swift */,
-				AC0D0AF524CD2AD100D75F29 /* DiscountsProtocols.swift */,
+				ACC9113E2512D6FD00E47A1F /* List */,
+				ACC9113F2512D70600E47A1F /* Discount */,
+				ACF3EC812512DCC300E2D0AA /* ScannerViewController.swift */,
 			);
 			path = Discounts;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 			children = (
 				AC3A25B5250E62A900106247 /* Order.swift */,
 				ACA4BFF9250F91F1004B4254 /* Promotion.swift */,
+				ACC9113C2512D0C100E47A1F /* Discount.swift */,
 			);
 			path = NetworkEntities;
 			sourceTree = "<group>";
@@ -291,6 +303,7 @@
 				AC3A25B7250E891400106247 /* RestaurantService.swift */,
 				AC3A25B2250E61E000106247 /* OrderService.swift */,
 				ACA4BFF7250F91C5004B4254 /* PromotionService.swift */,
+				ACC9113A2512D07900E47A1F /* DiscountsService.swift */,
 			);
 			path = ServicesAPI;
 			sourceTree = "<group>";
@@ -357,6 +370,27 @@
 				ACC8819424CB2B040013A01D /* SimpleAlertController.swift */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		ACC9113E2512D6FD00E47A1F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				AC0D0AF124CD2A7D00D75F29 /* DefaultDiscountsController.swift */,
+				AC0D0AF324CD2AA800D75F29 /* DefaultDiscountsView.swift */,
+				AC0D0AF724CD2E4900D75F29 /* DiscountItem.swift */,
+				AC0D0AF524CD2AD100D75F29 /* DiscountsProtocols.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		ACC9113F2512D70600E47A1F /* Discount */ = {
+			isa = PBXGroup;
+			children = (
+				ACC911402512D72400E47A1F /* DefaultDiscountController.swift */,
+				ACC911422512D73800E47A1F /* DefaultDiscountView.swift */,
+				ACC911442512D74B00E47A1F /* DiscountProtocols.swift */,
+			);
+			path = Discount;
 			sourceTree = "<group>";
 		};
 		ACCCCDF224E11B030092E111 /* ServicesLocal */ = {
@@ -505,6 +539,7 @@
 				AC2EAB0C24D0BB2F00E8B0F3 /* DefaultEnterPhoneController.swift in Sources */,
 				ACF5324A24CB9D3C00E832AC /* BCNavigationController.swift in Sources */,
 				AC2EAB0524D0B79D00E8B0F3 /* TitlableTextField.swift in Sources */,
+				ACC911412512D72400E47A1F /* DefaultDiscountController.swift in Sources */,
 				AC26A3E324CC6CED00B37536 /* DefaultPromotionsController.swift in Sources */,
 				AC2FFE4224C4994D003EF12C /* HomeProtocols.swift in Sources */,
 				AC7EFB5124C72CB400C63A08 /* OrderView.swift in Sources */,
@@ -520,6 +555,8 @@
 				AC505FBD24D1119C00D8A5B8 /* String+Extensions.swift in Sources */,
 				ACA4BFFA250F91F1004B4254 /* Promotion.swift in Sources */,
 				AC82C4B124D2914700250D4C /* DefaultEnterNameController.swift in Sources */,
+				ACC9113B2512D07900E47A1F /* DiscountsService.swift in Sources */,
+				ACC911432512D73800E47A1F /* DefaultDiscountView.swift in Sources */,
 				AC84D18F24C8950400D2ED75 /* DiscountCell.swift in Sources */,
 				AC45994D24CD3301005871BF /* DefaultSettingsView.swift in Sources */,
 				AC82C4B524D2918600250D4C /* EnterNameProtocols.swift in Sources */,
@@ -528,10 +565,12 @@
 				ACC8819524CB2B040013A01D /* SimpleAlertController.swift in Sources */,
 				AC2EAB1024D0BB4700E8B0F3 /* EnterPhoneProtocols.swift in Sources */,
 				AC2FFE2824C49755003EF12C /* AppDelegate.swift in Sources */,
+				ACC9113D2512D0C100E47A1F /* Discount.swift in Sources */,
 				AC7EFB4624C7157B00C63A08 /* BCButton.swift in Sources */,
 				ACCCCDF424E11B120092E111 /* SettingsService.swift in Sources */,
 				AC45994F24CD335E005871BF /* SettingsProtocols.swift in Sources */,
 				ACA4BFF8250F91C5004B4254 /* PromotionService.swift in Sources */,
+				ACC911452512D74B00E47A1F /* DiscountProtocols.swift in Sources */,
 				AC7EFB4924C7166900C63A08 /* Colors.swift in Sources */,
 				AC7EFB5624C73D4900C63A08 /* Fonts.swift in Sources */,
 				AC2FFE4024C498BD003EF12C /* DefaultHomeView.swift in Sources */,
@@ -545,6 +584,7 @@
 				ACEDCA0524CB158F00790186 /* BCTextFieldCell.swift in Sources */,
 				AC73336E24E0E8E70017D436 /* AuthService.swift in Sources */,
 				AC26A3E924CC701300B37536 /* PromotionItem.swift in Sources */,
+				ACF3EC822512DCC300E2D0AA /* ScannerViewController.swift in Sources */,
 				AC0D0AF224CD2A7D00D75F29 /* DefaultDiscountsController.swift in Sources */,
 				AC2FFE3E24C4988E003EF12C /* DefaultHomeController.swift in Sources */,
 				AC0D0AF424CD2AA800D75F29 /* DefaultDiscountsView.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import FirebaseAuth
+import FirebaseFirestore
 
 final class AuthService {
     
@@ -50,4 +51,20 @@ final class AuthService {
             print(user)
         }
     }
+    
+    func getUserEntityId(_ handler: @escaping (_ userId: String?, _ errorString: String?) -> ()) {
+        let db = Firestore.firestore()
+        guard let phone = SettingsService().userPhone else {
+            handler(nil, "Номер телефона пользователя не определен")
+            return
+        }
+        db.collection("users").whereField("phone", isEqualTo: phone).getDocuments { (query, error) in
+            guard let userDocument = query?.documents.first, userDocument.exists else {
+                handler(nil, error?.localizedDescription ?? "Что-то пошло не так...")
+                return
+            }
+            handler(userDocument.documentID, nil)
+        }
+    }
+    
 }

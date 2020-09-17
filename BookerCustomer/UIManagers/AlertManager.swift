@@ -10,7 +10,7 @@ import UIKit
 
 final class AlertManager {
     
-    private var vc: UIViewController
+    private weak var vc: UIViewController?
     
     init(vc: UIViewController) {
         self.vc = vc
@@ -18,6 +18,6 @@ final class AlertManager {
     
     func showAlert(title: String, message: String, action: (() -> Void)?) {
         let alert = SimpleAlertController(title: title, message: message, action: action)
-        vc.present(alert, animated: true, completion: nil)
+        vc?.present(alert, animated: true, completion: nil)
     }
 }

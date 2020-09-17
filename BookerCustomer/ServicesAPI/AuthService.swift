@@ -58,13 +58,65 @@ final class AuthService {
             handler(nil, "Номер телефона пользователя не определен")
             return
         }
-        db.collection("users").whereField("phone", isEqualTo: phone).getDocuments { (query, error) in
+        print(phone)
+        db.collection("users").whereField("phone", isEqualTo: phone).addSnapshotListener { (query, error) in
             guard let userDocument = query?.documents.first, userDocument.exists else {
                 handler(nil, error?.localizedDescription ?? "Что-то пошло не так...")
                 return
             }
             handler(userDocument.documentID, nil)
         }
+    }
+    
+    func createUserEntity(phone: String,
+                          name: String,
+                          lastname: String,
+                          _ handler: @escaping (String?, String?) -> ()) {
+        
+        let db = Firestore.firestore()
+        let newUserData: [String: Any] = [
+            "phone": phone,
+            "name": name,
+            "lastname": lastname
+        ]
+        let document = db.collection("users").document()
+        document.setData(newUserData) { (error) in
+            if let error = error {
+                handler(nil, error.localizedDescription)
+            } else {
+                handler(document.documentID, nil)
+            }
+        }
+    }
+    
+    func updateUserEntity(name: String? = nil,
+                          lastname: String? = nil,
+                          _ handler: @escaping (Bool, String?) -> ()) {
+        
+        let db = Firestore.firestore()
+        guard let userId = SettingsService().userEntityId else {
+            handler(false, "Пользователь не найден")
+            return
+        }
+        var userData: [String: Any] = [:]
+        if let name = name {
+            userData["name"] = name
+        }
+        if let lastname = lastname {
+            userData["lastname"] = lastname
+        }
+        db.collection("users").document(userId).updateData(userData) { (error) in
+            if let error = error {
+                handler(false, error.localizedDescription)
+            } else {
+                handler(true, nil)
+            }
+        }
+    }
+    
+    func logout() throws {
+        try Auth.auth().signOut()
+        SettingsService().clearAll()
     }
     
 }

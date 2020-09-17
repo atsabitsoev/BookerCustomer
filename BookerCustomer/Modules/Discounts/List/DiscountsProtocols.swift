@@ -10,7 +10,9 @@ import UIKit
 
 protocol DiscountsViewing: UIView {
     func configureView()
+    func setDiscountItems(_ items: [DiscountItem])
 }
 
 protocol DiscountsControlling: UIViewController {
+    func showQrCode(discountId: String)
 }

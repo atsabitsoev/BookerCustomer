@@ -9,5 +9,6 @@
 import Foundation
 
 struct DiscountItem {
+    var id: String
     var name: String
 }

@@ -64,8 +64,8 @@ final class DefaultHomeView: UIView, HomeViewing {
     
     func configureView() {
         backgroundColor = UIColor.Background.primaryLight
-        addSubview(orderView)
         addSubview(helpStackView)
+        addSubview(orderView)
         helpStackView.addArrangedSubview(helpImageView)
         helpStackView.addArrangedSubview(helpLabel)
         setNeedsUpdateConstraints()

@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         let currentUser = Auth.auth().currentUser
         currentUser?.reload()
-        let userLoggedIn = currentUser != nil
+        let userLoggedIn = SettingsService().userPhone != nil
         let rootViewController = userLoggedIn ? BCTabBarController() : BCNavigationController(rootViewController: DefaultEnterPhoneController())
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()

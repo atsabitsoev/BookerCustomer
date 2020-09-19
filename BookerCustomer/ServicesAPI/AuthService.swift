@@ -46,6 +46,7 @@ final class AuthService {
                 handler(false, false, nil)
                 return
             }
+            SettingsService().updateValues()
             let wasRegisteredEarlier = !userInfo.isNewUser
             handler(true, wasRegisteredEarlier, nil)
             print(user)

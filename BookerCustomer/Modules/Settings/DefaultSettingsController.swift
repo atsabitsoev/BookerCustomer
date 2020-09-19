@@ -83,7 +83,6 @@ final class DefaultSettingsController: UIViewController, SettingsControlling {
             let name = name ?? ""
             let lastname = lastname ?? ""
             self.settingsView.configureView(name: name, lastname: lastname, notificationsOn: self.notificationsIsOn)
-
         }
     }
     
@@ -101,9 +100,13 @@ final class DefaultSettingsController: UIViewController, SettingsControlling {
     private func quit() {
         do {
             try AuthService().logout()
+            let authVC = DefaultEnterPhoneController()
+            let authNav = BCNavigationController(rootViewController: authVC)
+            authNav.modalPresentationStyle = .fullScreen
+            authNav.modalTransitionStyle = .flipHorizontal
+            self.tabBarController?.present(authNav, animated: true, completion: nil)
         } catch {
             return
         }
-        SettingsService().clearAll()
     }
 }

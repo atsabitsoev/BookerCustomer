@@ -36,16 +36,19 @@ final class AuthService {
             withVerificationID: verificationId ?? "",
             verificationCode: verificationCode
         )
+        
         Auth.auth().signIn(with: credential) { (result, error) in
             if let error = error {
                 handler(false, false, error)
                 return
             }
+            
             guard let user = result?.user,
                 let userInfo = result?.additionalUserInfo else {
                 handler(false, false, nil)
                 return
             }
+            
             SettingsService().updateValues()
             let wasRegisteredEarlier = !userInfo.isNewUser
             handler(true, wasRegisteredEarlier, nil)

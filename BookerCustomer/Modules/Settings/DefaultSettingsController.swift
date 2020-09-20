@@ -65,10 +65,6 @@ final class DefaultSettingsController: UIViewController, SettingsControlling {
         settingsView.enableSaveButton(false)
     }
     
-    func quitButtonTapped() {
-        alertQuit()
-    }
-    
     private func setupNavigationBar() {
         let barQuitItem = UIBarButtonItem(image: UIImage(named: "exit"), style: .plain, target: self, action: #selector(alertQuit))
         self.navigationItem.rightBarButtonItem = barQuitItem

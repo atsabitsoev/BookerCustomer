@@ -29,7 +29,9 @@ final class PromotionService {
                 if let title = promotionDict["title"] as? String,
                     let description = promotionDict["description"] as? String,
                     let image = promotionDict["image"] as? String {
-                    let promotion = Promotion(title: title, description: description, image: image)
+                    let creationDateTS = promotionDict["creationDate"] as? Timestamp
+                    let creationDate = Date(timeIntervalSince1970: Double(creationDateTS?.seconds ?? 0))
+                    let promotion = Promotion(title: title, description: description, image: image, creationDate: creationDate)
                     return promotion
                 } else {
                     return nil

@@ -16,13 +16,24 @@ final class DefaultPromotionsController: UIViewController, PromotionsControlling
     
     private var promotions: [Promotion] = [] {
         didSet {
-            self.promotionsView.setPromotionItems(promotions.map({ (promotion) -> PromotionItem in
-                let title = promotion.title
-                let description = promotion.description
-                let imageUrl = promotion.image
-                let promotionItem = PromotionItem(imageUrl: imageUrl, title: title, description: description)
-                return promotionItem
-            }))
+            self.promotionsView.setPromotionItems(
+                promotions
+                    .sorted(by: { (promotion1, promotion2) -> Bool in
+                        guard promotion1.creationDate != nil && promotion2.creationDate != nil else { return true }
+                        if let creationDate1 = promotion1.creationDate {
+                            return creationDate1 > (promotion2.creationDate ?? Date(timeIntervalSince1970: 0))
+                        } else {
+                            return true
+                        }
+                    })
+                    .map({ (promotion) -> PromotionItem in
+                        let title = promotion.title
+                        let description = promotion.description
+                        let imageUrl = promotion.image
+                        let promotionItem = PromotionItem(imageUrl: imageUrl, title: title, description: description)
+                        return promotionItem
+                    })
+            )
         }
     }
     

@@ -25,6 +25,9 @@ final class OrderView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     private let datePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .dateAndTime
+        if #available(iOS 13.4, *) {
+            picker.preferredDatePickerStyle = .wheels
+        }
         picker.locale = Locale(identifier: "ru_RU")
         picker.minimumDate = Date(timeIntervalSinceNow: 20*60)
         picker.maximumDate = Date(timeIntervalSinceNow: 14 * 24*60*60)
